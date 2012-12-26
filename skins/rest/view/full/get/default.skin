@@ -1,0 +1,262 @@
+<div class="tab-pane active" name="tabGeneral" id="APDtabGeneral">
+    <!--  <h3>General</h3> -->
+    <form>
+        <dl class="apidoc">
+            <dt>Title</dt>
+            <dd><input type="text" class="input-xlarge" name="title" value="{$ZU_feature.data.title}"></dd>
+
+
+            <dt>Request URI</dt>
+            <dd>{$ZU_feature.data.request}</dd>
+
+            <dt>Method</dt>
+            <dd>{$ZU_feature.data.method}</dd>
+
+
+            <dt>Brief description</dt>
+            <dd>
+                <textarea class="input-xlarge" name="description">{$ZU_feature.data.description}</textarea>
+            </dd>
+
+        </dl>
+    </form>
+    <button class="btn btn-mini btn-primary pull-right hide" name="edGeneral"><i class="icon-white icon-ok"></i> Save
+        changes
+    </button>
+</div>
+
+<div class="tab-pane" id="APDtabParameter">
+
+    <!-- <h2>Parameter / Variables</h2> -->
+{assign var="ident" value="false"}
+{foreach from=$ZU_feature.data.parameter key="PK" item="Param"}
+    <form name="param{$PK}">
+        <input type="hidden" name="identifier" value="{$PK}">
+        <dl class="apidoc">
+            {if $PK == "identifier"}{assign var="ident" value="true"}{/if}
+            <dt>Name</dt>
+            <dd><input type="text" class="input-xlarge" name="name" value="{$PK}"></dd>
+            <dt>Type</dt>
+            <dd><select class="span2" name="type">
+                {foreach from=$ZU_feature.config.definition.type key="KEY" item="TYPE"}
+                    <option value="{$KEY}" {if $Param.type==$KEY}selected="selected"{/if}>{$TYPE}</option>
+                {/foreach}
+            </select>
+            </dd>
+            <dt>RegExp</dt>
+            <dd><input type="text" class="input-xlarge" name="regularexpression" value="{$Param.regularexpression}">
+            </dd>
+
+            <dt>Required</dt>
+            <dd><input type="checkbox" name="required" {if $Param.required==1} checked="checked" {/if}></dd>
+            <dt>Default Value</dt>
+            <dd><input type="text" class="input-xlarge" name="default" value="{$Param.default_value}"></dd>
+            <dt>Description</dt>
+            <dd>
+                <textarea class="input-xlarge" name="description">{$Param.description}</textarea>
+            </dd>
+            <dt></dt>
+            <dd><a class="btn btn-mini btn-primary pull-right " name="saveParam" data-param="{$PK}"><i
+                    class="icon-white icon-ok"></i> Save changes</a></dd>
+        </dl>
+    </form>
+
+{/foreach}
+    <form name="param">
+        <input type="hidden" name="identifier" value="">
+        <dl class="apidoc">
+        {if $PK == "identifier"}{assign var="ident" value="true"}{/if}
+            <dt>Name</dt>
+            <dd><input type="text" class="input-xlarge" name="name" value=""></dd>
+            <dt>Type</dt>
+            <dd><select class="span2" name="type">
+            {foreach from=$ZU_feature.config.definition.type key="KEY" item="TYPE"}
+                <option value="{$KEY}">{$TYPE}</option>
+            {/foreach}
+            </select>
+            </dd>
+            <dt>RegExp</dt>
+            <dd><input type="text" class="input-xlarge" name="regularexpression" value=""></dd>
+
+            <dt>Required</dt>
+            <dd><input type="checkbox" name="required"></dd>
+            <dt>Default Value</dt>
+            <dd><input type="text" class="input-xlarge" name="default" value=""></dd>
+            <dt>Description</dt>
+            <dd>
+                <textarea class="input-xlarge" name="description"></textarea>
+            </dd>
+            <dt></dt>
+            <dd><a class="btn btn-mini btn-primary pull-right" name="saveParam" data-param=""><i
+                    class="icon-white icon-plus"></i> Add</a></dd>
+        </dl>
+    </form>
+
+</div>
+
+<div class="tab-pane" id="APDtabMimetypes">
+{foreach from=$ZU_feature.data.mimetype key="MT" item="Mimetype"}
+    <form name="mime{$MT}">
+        <input type="hidden" name="identifier" value="{$MT}">
+        <dl class="apidoc">
+            <dt>Mimetype</dt>
+            <dd><input type="text" name="name" value="{$MT}"></dd>
+            <dt>default</dt>
+
+            <dd><input type="checkbox" name="default" {if $Mimetype.is_default} checked="checked" {/if}></dd>
+            <dt>Description</dt>
+            <dd>
+                <textarea class="input-xlarge" name="response">{$Mimetype.response}</textarea>
+            </dd>
+            <dt></dt>
+            <dd><a class="btn btn-mini btn-primary pull-right " name="saveMime" data-param="{$MT}"><i
+                    class="icon-white icon-ok"></i> Save changes</a></dd>
+        </dl>
+    </form>
+{/foreach}
+
+    <form name="mime">
+        <input type="hidden" name="identifier" value="">
+        <dl class="apidoc">
+            <dt>Mimetype</dt>
+            <dd><input type="text" name="name" value=""></dd>
+            <dt>default</dt>
+            <dd><input type="checkbox" name="default"></dd>
+
+            <dt>Description</dt>
+            <dd>
+                <textarea class="input-xlarge" name="response"></textarea>
+            </dd>
+            <dt></dt>
+            <dd><a class="btn btn-mini btn-primary pull-right " name="saveMime" data-param=""><i
+                    class="icon-white icon-plus"></i> Add</a></dd>
+        </dl>
+    </form>
+
+
+</div>
+
+<div class="tab-pane" id="APDtabStates">
+{foreach from=$ZU_feature.data.states key="ST" item="State"}
+<form name="state{$ST}">
+    <input type="hidden" name="identifier" value="{$ST}">
+    <dl class="apidoc">
+        <dt>State</dt>
+        <dd>
+            <select class="span2" name="state">
+                {foreach from=$ZU_feature.data.header key="key" item="method"}
+                    <option {if $key == $ST}selected="selected"{/if} value="{$key}">{$key} : {$method}</option>
+                {/foreach}
+                <option value="">none</option>
+            </select>
+        </dd>
+        <dt>Message</dt>
+        <dd><input type="text" name="message" value="{$State.message}">
+        </dd>
+
+        <dt>Description</dt>
+        <dd><textarea class="input-xlarge" name="description">{$State.description}</textarea></dd>
+        <dt></dt>
+        <dd><a class="btn btn-mini btn-primary pull-right " name="saveState" data-param="{$ST}"><i class="icon-white icon-ok"></i> Save changes</a></dd>
+    </dl>
+</form>
+{/foreach}
+    <form name="state">
+        <input type="hidden" name="identifier" value="">
+        <dl class="apidoc">
+            <dt>State</dt>
+            <dd>
+                <select class="span2" name="state">
+                {foreach from=$ZU_feature.data.header key="key" item="method"}
+                    <option value="{$key}">{$key} : {$method}</option>
+                {/foreach}
+                </select>
+            </dd>
+            <dt>Message</dt>
+            <dd><input type="text" name="message" value="">
+            </dd>
+
+            <dt>Description</dt>
+            <dd><textarea class="input-xlarge" name="description"></textarea></dd>
+            <dt></dt>
+            <dd><a class="btn btn-mini btn-primary pull-right " name="saveState" data-param=""><i
+                    class="icon-white icon-plus"></i> Add</a></dd>
+
+        </dl>
+    </form>
+
+</div>
+
+<div class="tab-pane" id="APDtabPermission">
+{foreach from=$ZU_feature.data.permission key="RL" item="Role"}
+    <form name="role_{$RL}">
+        <input type="hidden" name="index" value="{$RL}">
+        <dl class="apidoc">
+            <dt>Role</dt>
+            <dd><input type="text" name="role" value="{$Role.role}"></dd>
+            
+            <dt>Description / Reason</dt>
+            <dd>
+                <textarea class="input-xlarge" name="description">{$Role.description}</textarea>
+            </dd>
+            <dt></dt>
+            <dd><a class="btn btn-mini btn-primary pull-right " name="saveRole" data-param="_{$RL}"><i
+                    class="icon-white icon-ok"></i> Save changes</a></dd>
+        </dl>
+    </form>
+{/foreach}
+
+    <form name="role_n">
+        <input type="hidden" name="index" value="">
+        <dl class="apidoc">
+            <dt>Role</dt>
+            <dd><input type="text" name="role" value=""></dd>
+
+            <dt>Description / Reason</dt>
+            <dd>
+                <textarea class="input-xlarge" name="description"></textarea>
+            </dd>
+            <dt></dt>
+            <dd><a class="btn btn-mini btn-primary pull-right " name="saveRole" data-param="_n"><i
+                    class="icon-white icon-plus"></i> Add</a></dd>
+        </dl>
+    </form>
+    
+    
+    
+    
+</div>
+
+<div class="tab-pane" id="APDtabCacheing">
+</div>
+<div class="tab-pane" id="APDtabCode">
+    <h3>JS code for communication with this Restlet</h3>
+    <pre>
+{literal}
+    $.ajax({
+    url:'/rest/{/literal}{$ZU_feature.data.request}/{if $ident == "true"}
+    [identifier]{/if}{foreach from=$ZU_feature.data.mimetype key="MT" item="Mimetype"}{if $Mimetype.is_default}
+    .{$MT}{/if}{/foreach}',{literal}
+    type:'{/literal}{$ZU_feature.data.method}{literal}',
+    data:{{/literal}
+    // TODO:: fill this variables with values
+{foreach name="param" from=$ZU_feature.data.parameter key="PK" item="Param"}{if $PK != "identifier"}
+    {$Param.name}:{$PK}.val(){if !$smarty.foreach.param.last},{/if}
+    //{$ZU_feature.config.definition.type[$Param.type]}  {$Param.regularexpression}
+{/if}{/foreach}{literal}
+    },
+
+    statusCode:{{/literal}{foreach from=$ZU_feature.data.states key="ST" item="State" name="state"}
+
+    {$ST}:function(response){literal}{{/literal}
+    //{$State.description}
+    // TODO:: insert your code here
+
+            }{if !$smarty.foreach.state.last},{/if}
+{/foreach}{literal}
+
+    }
+});
+{/literal}
+</pre>
+</div>

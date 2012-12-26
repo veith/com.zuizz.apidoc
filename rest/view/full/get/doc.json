@@ -1,0 +1,42 @@
+{"title":"Apidoc full view", "request":"com.zuizz.apidoc.view.full", "method":"GET", "description":"Show all entries for feature \/ module api\nZugreifbar \u00fcber die rst_apidoc ID oder \u00fcber den request.\nID:\n\/rest\/com.zuizz.apidoc.view.full\/1234.xml\n\nRequest:\n\/rest\/com.zuizz.apidoc.view.full\/.xml?f130request=com.zuizz.apidoc.view.full", "parameter":{
+    "identifier":{
+        "description":"apidoc_id",
+        "name":"identifier",
+        "type":1,
+        "required":true,
+        "default_value":null,
+        "regularexpression":null
+    }
+}, "states":{
+    "200":{
+        "code":200,
+        "message":"OK",
+        "description":"Verarbeitung OK, Daten im Body"
+    },
+    "404":{
+        "code":404,
+        "message":"Element not found",
+        "description":"Wird zur\u00fcckgegeben wenn die entsprechende ID nicht existiert"
+    }
+}, "permission":[
+    {
+        "role":"Developer",
+        "description":"Die Dokumentation darf von jedem gelesen werden"
+    }
+], "mimetype":{
+    "html":{
+        "name":"html",
+        "is_default":false,
+        "response":"html formated information"
+    },
+    "json":{
+        "name":"json",
+        "is_default":true,
+        "response":"{\n  &quot;id&quot; : &quot;4&quot;,\n  &quot;feature_id&quot; : &quot;15&quot;,\n  &quot;title&quot; : &quot;Terminate Session&quot;,\n  &quot;request&quot; : &quot;com.zuizz.auth.terminate&quot;,\n  &quot;method&quot; : &quot;0&quot;,\n  &quot;description&quot; : &quot;Terminate Session (Logout)&quot;,\n  &quot;states&quot; : {\n    &quot;200&quot; : {\n      &quot;code&quot; : &quot;200&quot;,\n      &quot;message&quot; : &quot;OK&quot;,\n      &quot;description&quot; : &quot;Session Terminated&quot;\n    }\n  },\n  &quot;permission&quot; : [ {\n    &quot;role&quot; : &quot;Public&quot;,\n    &quot;description&quot; : &quot;Everyone can terminate his Session&quot;\n  } ],\n  &quot;mimetype&quot; : {\n    &quot;json&quot; : {\n      &quot;name&quot; : &quot;json&quot;,\n      &quot;default&quot; : &quot;1&quot;,\n      &quot;response&quot; : &quot;{\\&quot;message\\&quot;:\\&quot;Session terminated\\&quot;}&quot;\n    }\n  }\n}"
+    },
+    "xml":{
+        "name":"xml",
+        "is_default":false,
+        "response":"&lt;doc&gt;\n&lt;id&gt;5&lt;\/id&gt;\n&lt;feature_id&gt;130&lt;\/feature_id&gt;\n&lt;title&gt;Apidoc full view&lt;\/title&gt;\n&lt;request&gt;com.zuizz.apidoc.view.full&lt;\/request&gt;\n&lt;method&gt;0&lt;\/method&gt;\n&lt;description&gt;\nShow all entries for feature \/ module api Zugreifbar &Atilde;&frac14;ber die rst_apidoc ID oder &Atilde;&frac14;ber den request. ID: \/rest\/com.zuizz.apidoc.view.full\/1234.xml Request: \/rest\/com.zuizz.apidoc.view.full\/.xml?f130request=com.zuizz.apidoc.view.full\n&lt;\/description&gt;\n&lt;parameter&gt;\n&lt;identifier&gt;\n&lt;name&gt;f130identifier&lt;\/name&gt;\n&lt;required&gt;1&lt;\/required&gt;\n&lt;description&gt;apidoc_id&lt;\/description&gt;\n&lt;type&gt;0&lt;\/type&gt;\n&lt;regexp\/&gt;\n&lt;\/identifier&gt;\n&lt;request&gt;\n&lt;name&gt;f130request&lt;\/name&gt;\n&lt;required&gt;0&lt;\/required&gt;\n&lt;description&gt;i.e. com.zuizz.apidoc.view.full&lt;\/description&gt;\n&lt;type&gt;1&lt;\/type&gt;\n&lt;regexp\/&gt;\n&lt;\/request&gt;\n&lt;\/parameter&gt;\n&lt;states&gt;\n&lt;code&gt;200&lt;\/code&gt;\n&lt;message&gt;OK&lt;\/message&gt;\n&lt;description&gt;Verarbeitung OK, Daten im Body&lt;\/description&gt;\n&lt;\/states&gt;\n&lt;states&gt;\n&lt;code&gt;404&lt;\/code&gt;\n&lt;message&gt;Element not found&lt;\/message&gt;\n&lt;description&gt;\nWird zur&Atilde;&frac14;ckgegeben wenn die entsprechende ID nicht existiert\n&lt;\/description&gt;\n&lt;\/states&gt;\n&lt;permission&gt;\n&lt;role&gt;Public&lt;\/role&gt;\n&lt;description&gt;Die Dokumentation darf von jedem gelesen werden&lt;\/description&gt;\n&lt;\/permission&gt;\n&lt;mimetype&gt;\n&lt;json&gt;\n&lt;name&gt;json&lt;\/name&gt;\n&lt;default&gt;1&lt;\/default&gt;\n&lt;response&gt;\n{ &amp;quot;id&amp;quot; : &amp;quot;4&amp;quot;, &amp;quot;feature_id&amp;quot; : &amp;quot;15&amp;quot;, &amp;quot;title&amp;quot; : &amp;quot;Terminate Session&amp;quot;, &amp;quot;request&amp;quot; : &amp;quot;com.zuizz.auth.terminate&amp;quot;, &amp;quot;method&amp;quot; : &amp;quot;0&amp;quot;, &amp;quot;description&amp;quot; : &amp;quot;Terminate Session (Logout)&amp;quot;, &amp;quot;states&amp;quot; : { &amp;quot;200&amp;quot; : { &amp;quot;code&amp;quot; : &amp;quot;200&amp;quot;, &amp;quot;message&amp;quot; : &amp;quot;OK&amp;quot;, &amp;quot;description&amp;quot; : &amp;quot;Session Terminated&amp;quot; } }, &amp;quot;permission&amp;quot; : [ { &amp;quot;role&amp;quot; : &amp;quot;Public&amp;quot;, &amp;quot;description&amp;quot; : &amp;quot;Everyone can terminate his Session&amp;quot; } ], &amp;quot;mimetype&amp;quot; : { &amp;quot;json&amp;quot; : { &amp;quot;name&amp;quot; : &amp;quot;json&amp;quot;, &amp;quot;default&amp;quot; : &amp;quot;1&amp;quot;, &amp;quot;response&amp;quot; : &amp;quot;{\\&amp;quot;message\\&amp;quot;:\\&amp;quot;Session terminated\\&amp;quot;}&amp;quot; } } }\n&lt;\/response&gt;\n&lt;\/json&gt;\n&lt;xml&gt;\n&lt;name&gt;xml&lt;\/name&gt;\n&lt;default&gt;0&lt;\/default&gt;\n&lt;response\/&gt;\n&lt;\/xml&gt;\n&lt;\/mimetype&gt;\n&lt;\/doc&gt;"
+    }
+}}

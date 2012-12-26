@@ -1,0 +1,21 @@
+<div class="tabbable" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+    <ul class="nav nav-tabs" id="sidenavtab">
+        <li class="active"><a href="#APDtabNav" data-toggle="tab"><i class="icon-list-alt"></i> Browse</a></li>
+        <li><a href="#APDtabFav" data-toggle="tab"><i class="icon-star"></i> Favorites</a></li>
+    </ul>
+    <div class="{'fullheight'|Tc} tab-content">
+        <div class="{"browse"|Tc} tab-pane active" id="APDtabNav" data-connectors="browser, viewer">
+            Loading...
+        </div>
+        <div class="{'favorites'|Tc} tab-pane" id="APDtabFav">
+        {foreach from=$ZU_feature.data.favorites item="fav"}
+            <div class="restlet {$fav.method}" data-restlet="{$ZU_feature.data.request}.{$subview}.{$element.method}">
+                <i>{$fav.request}</i>
+                {$fav.title}
+            </div>
+        {/foreach}
+
+        </div>
+
+    </div>
+</div>

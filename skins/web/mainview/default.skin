@@ -1,0 +1,49 @@
+{"default"|ZU_load_css}
+<div class="{'viewer'|Tc}" data-connectors="viewer">
+
+    <div class="tabbable">
+        <ul class="nav nav-tabs" id="APDTab" data-target="APDcontent">
+            <li class="active"><a id="APDtcGeneral" href="#APDtabGeneral" data-toggle="tab"><i class="icon-fire"></i>
+                General</a></li>
+            <li><a id="APDtcParameter" href="#APDtabParameter" data-toggle="tab"><i class="icon-file"></i> Parameter</a>
+            </li>
+            <li><a id="APDtcMimetypes" href="#APDtabMimetypes" data-toggle="tab"><i class="icon-share"></i> Mimetype</a>
+            </li>
+            <li><a id="APDtcStates" href="#APDtabStates" data-toggle="tab"><i class="icon-random"></i> State</a></li>
+            <li><a id="APDtcPermissions" href="#APDtabPermission" data-toggle="tab"><i class="icon-eye-open"></i>
+                Role</a></li>
+            <li><a id="APDtcCacheing" href="#APDtabCacheing" data-toggle="tab"><i class="icon-calendar"></i> Cache</a>
+            </li>
+            <li><a id="APDtcCode" href="#APDtabCode" data-toggle="tab"><i class="icon-download"></i> JS</a></li>
+        </ul>
+
+        <div class="tab-content" id="APDcontent">
+
+            <div class="tab-pane active" id="APDtabGeneral">
+
+            </div>
+
+            <div class="tab-pane" id="APDtabParameter">
+
+            </div>
+
+            <div class="tab-pane" id="APDtabMimetypes">
+            </div>
+
+            <div class="tab-pane" id="APDtabStates">
+            </div>
+
+            <div class="tab-pane" id="APDtabPermission">
+            </div>
+
+            <div class="tab-pane" id="APDtabCacheing">
+            </div>
+
+            <div class="tab-pane" id="APDtabCode">
+
+            </div>
+
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,6 @@
+{foreach from=$ZU_feature.data.favorites item="fav"}
+   <div class="well" data-id="{$fav.id}">
+       <i class="icon-file"></i> {$fav.request}<br/>
+       <i class="icon-retweet"></i>  <span class="label  {$ZU_feature.config.methodcolors[$fav.method]}">{$fav.method}
+   </div>
+{/foreach}

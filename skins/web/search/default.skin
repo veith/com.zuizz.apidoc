@@ -1,0 +1,10 @@
+{"search"|ZU_load_js}
+<div class="navbar-form">
+    <select name="method" id="method" class="span1">
+        <option value="-1">All</option>
+    {foreach from=$ZU_feature.config.definition.method key="key" item="method"}
+        <option value="{$key}">{$method}</option>
+    {/foreach}
+    </select>
+    <input class="error" type="text" data-provide="typeahead" id="searchinput" placeholder="search apidoc...">
+</div>

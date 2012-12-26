@@ -1,0 +1,62 @@
+<div class="modal hide" id="duplicateRESTlet">
+    <div class="{"CreateRestlet"|Tc}" data-connectors="viewer">
+        <div class="modal-header">
+            <a class="close" data-dismiss="modal">×</a>
+            <h3>Duplicate <span name="source">src</span></h3>
+        </div>
+        <div class="modal-body">
+            <form class="form-horizontal" id="formDuplicateRESTlet">
+                <input type="hidden" name="f130source" value="">
+                <fieldset>
+                    <div class="control-group">
+                        <label class="control-label" for="f130title">Title</label>
+
+                        <div class="controls">
+                            <input type="text" class="input-xlarge" id="f130title" name="f130title">
+                        </div>
+
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="f130method">Method</label>
+
+                        <div class="controls">
+                            <select class="span2" name="f130method" id="f130method">
+                            {foreach from=$ZU_feature.config.definition.method key="key" item="method"}
+                                <option value="{$key}">{$method}</option>
+                            {/foreach}
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="control-group error">
+                        <label class="control-label" for="f130feature">Feature</label>
+
+                        <div class="controls">
+                            <select class="span3" name="f130feature" id="f130feature">
+                            {foreach from=$ZU_feature.data.features item="feature"}
+                                <option value="{$feature}">{$feature}</option>
+                            {/foreach}
+                            </select>
+                        </div>
+                    </div>
+
+                <div class="control-group">
+                        <label class="control-label" for="f130element">Restlet</label>
+
+                        <div class="controls">
+                            <input type="text" placeholder="ressource.subressource" name="f130element" id="f130element">
+                            <p class="help-block">Hint: Use nouns, not verbs</p>
+                        </div>
+                    </div>
+
+
+
+                </fieldset>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <a href="#" class="btn btn-primary" name="add"><i class="icon-plus icon-white"></i> Duplicate</a>
+            <a href="#" class="btn" data-dismiss="modal">Close</a>
+        </div>
+    </div>
+</div>

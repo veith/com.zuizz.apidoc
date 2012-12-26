@@ -1,0 +1,63 @@
+<div class="modal hide" id="addRESTlet">
+    <div class="modal-header">
+        <a class="close" data-dismiss="modal">×</a>
+        <h3>Add a new RESTlet</h3>
+    </div>
+    <div class="modal-body">
+        <form class="form-horizontal" id="formAddRESTlet">
+            <fieldset>
+                <div class="control-group">
+                    <label class="control-label" for="f130title">Title</label>
+
+                    <div class="controls">
+                        <input type="text" class="input-xlarge" id="f130title" name="f130title">
+
+                        <p class="help-block">Give a good name for your RESTlet</p>
+                    </div>
+
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="f130method">Method</label>
+
+                    <div class="controls">
+                        <select class="span2" name="f130method" id="f130method">
+                            {foreach from=$ZU_feature.config.definition.method key="key" item="method"}
+                            <option value="{$key}">{$method}</option>
+                            {/foreach}
+                        </select>
+
+                        <p class="help-block">Select the RESTfull method</p>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="f130feature">Request URI</label>
+
+                    <div class="controls">
+                        <select class="span2" name="f130feature" id="f130feature">
+                            {foreach from=$ZU_feature.data.features item="feature"}
+                            <option value="{$feature}" >{$feature}</option>
+                            {/foreach}
+                        </select>
+                        <input type="text" placeholder="element.sub" name="f130element" id="f130element">
+
+                        <p class="help-block">com.zuizz.somethin.element.sub</p>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="f130description">Description</label>
+
+                    <div class="controls">
+                        <textarea class="input-xlarge" name="f130description" id="f130description"></textarea>
+
+                        <p class="help-block">Describe your RESTlet with a few sentences</p>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn btn-primary" id="btnAddRESTlet"><i class="icon-plus icon-white"></i> Add RESTlet</a>
+        <a href="#" class="btn" data-dismiss="modal">Close</a>
+    </div>
+</div>

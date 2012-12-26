@@ -1,0 +1,24 @@
+.modTitlebar div.restlet{
+    border-width: 2px 2px 2px 5px;
+    border-color: #dcdcdc;
+    border-style: solid;
+    margin: 0 0 8px 0;
+    padding: 5px;
+
+
+}
+.modTitlebar div.buttons{
+    padding: 5px;
+}
+.modTitlebar div.restlet.GET{
+    border-color: green;
+}
+.modTitlebar div.restlet.POST{
+    border-color: #4169e1;
+}
+.modTitlebar div.restlet.DELETE{
+    border-color: red;
+}
+.modTitlebar div.restlet.PUT{
+    border-color: orange;
+}

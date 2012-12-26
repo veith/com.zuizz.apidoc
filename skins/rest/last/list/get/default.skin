@@ -1,0 +1,6 @@
+{foreach from=$ZU_feature.session.last item="last"}
+   <div class="well" data-id="{$last.id}">
+       <i class="icon-file"></i> {$last.request}<br/>
+       <i class="icon-retweet"></i>  <span class="label  {$ZU_feature.config.methodcolors[$last.method]}">{$last.method}</span>
+   </div>
+{/foreach}

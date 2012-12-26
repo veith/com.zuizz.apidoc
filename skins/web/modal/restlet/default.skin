@@ -1,0 +1,64 @@
+<div class="modal hide" id="addRESTlet">
+    <div class="{"CreateRestlet"|Tc}" data-connectors="viewer">
+        <div class="modal-header">
+            <a class="close" data-dismiss="modal">×</a>
+
+            <h3>Add a new RESTlet</h3>
+        </div>
+        <div class="modal-body">
+            <form class="form-horizontal" id="formAddRESTlet">
+                <fieldset>
+                    <div class="control-group">
+                        <label class="control-label" for="title">Title</label>
+
+                        <div class="controls">
+                            <input type="text" class="input-xlarge" id="title" name="title">
+
+
+                        </div>
+
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="method">Method</label>
+
+                        <div class="controls">
+                            <select class="span2" name="method" id="method">
+                            {foreach from=$ZU_feature.config.definition.method key="key" item="method"}
+                                <option value="{$key}">{$method}</option>
+                            {/foreach}
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="feature">Feature</label>
+
+                        <div class="controls">
+                            <select class="span3" name="feature" id="feature">
+                            {foreach from=$ZU_feature.data.features item="feature"}
+                                <option value="{$feature}">{$feature}</option>
+                            {/foreach}
+                            </select>
+                        </div>
+                    </div>
+
+                <div class="control-group">
+                        <label class="control-label" for="element">Restlet</label>
+
+                        <div class="controls">
+                            <input type="text" placeholder="ressource.subressource" name="element" id="element">
+                            <p class="help-block">Hint: Use nouns</p>
+                        </div>
+                    </div>
+
+
+
+                </fieldset>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <a href="#" class="btn btn-primary" name="add"><i class="icon-plus icon-white"></i> Add RESTlet</a>
+            <a href="#" class="btn" data-dismiss="modal">Close</a>
+        </div>
+    </div>
+</div>

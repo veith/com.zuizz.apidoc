@@ -1,0 +1,28 @@
+<div class="accordion" id="acc">
+{foreach from=$ZU_feature.data.features key="feature" item="collection"}
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a class="accordion-toggle" data-toggle="collapse" href="#collapse{$collection.feature_id}">
+                {$feature}
+            </a>
+        </div>
+        <div id="collapse{$collection.feature_id}" class="accordion-body in" style="height: auto; ">
+            <div class="accordion-inner">
+                {foreach from=$collection.collection key="key" item="elements"}
+                    <b>{$key} </b> <br>
+                    <div class="well">
+                        {foreach from=$elements.restlets item="restlet" name="elem"}
+                            <div class="apidocitem" data-id="{$restlet.id}">
+                            <i>{$restlet.title}</i> <br>
+                            <span class="label  {$ZU_feature.config.methodcolors[$restlet.method]}">{$restlet.method}</span>
+                            {$restlet.uri}/[id].type
+                            {if !$smarty.foreach.elem.last}<hr>{/if}
+                            </div>
+                        {/foreach}
+                    </div>
+                {/foreach}
+            </div>
+        </div>
+    </div>
+{/foreach}
+</div>

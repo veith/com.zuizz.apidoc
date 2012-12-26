@@ -1,0 +1,5 @@
+{"modal"|ZU_load_js}
+<div class="navbar-form pull-right">
+    <button class="btn"  data-toggle="modal" data-target="#addRESTlet"><i class="icon-fire"></i> {$ZU_feature.translations.navbar.addFeature}</button>
+    <button class="btn" id="APDlogout"><i class="icon-off"></i> Logout</button>
+</div>

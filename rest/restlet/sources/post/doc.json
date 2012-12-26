@@ -1,0 +1,41 @@
+{"title":"Sourcecode", "request":"com.zuizz.apidoc.restlet.sources", "method":"POST", "description":"Build sourcecode from apidoc", "parameter":{
+    "identifier":{
+        "description":"version.feature.restlet.method\r\n0.com.zuizz.apidoc.restlet.sources.post",
+        "name":"identifier",
+        "type":"1",
+        "required":0,
+        "default_value":"",
+        "regularexpression":""
+    },
+    "language":{
+        "description":"Language of source. PHP only at the moment.",
+        "name":"language",
+        "regularexpression":"",
+        "default_value":"php",
+        "type":"1",
+        "required":0
+    }
+}, "states":{
+    "201":{
+        "description":"Sourcecode is created",
+        "code":"201",
+        "message":"Source Created"
+    },
+    "400":{
+        "description":"The sourcefile already exists.",
+        "code":"400",
+        "message":"Sourcefile already exists"
+    }
+}, "permission":[
+    {
+        "role":"Developer",
+        "description":"Developers can build source from apidoc"
+    }
+], "mimetype":{
+    "json":{
+        "name":"json",
+        "is_default":"on",
+        "response":"",
+        "required":0
+    }
+}}

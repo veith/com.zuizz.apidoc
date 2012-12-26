@@ -1,0 +1,29 @@
+
+
+
+.x-large{
+    width : 400px;
+}
+
+#APDtabLast .well, #APDtabFav .well, .apidocitem{
+    cursor:pointer;
+}
+dl.apidoc {
+    border-bottom: 1px solid #EAEAEA;
+    clear: left;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    width: 100%;
+    float: left;
+}
+dl.apidoc dt {
+    float: left;
+    clear: left;
+    width: 20%;
+    margin-bottom: 8px;
+}
+ dl.apidoc dd {
+    float: left;
+    width: 75%;
+    margin: 0;
+}

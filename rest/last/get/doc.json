@@ -1,0 +1,1 @@
+{"title":"Apidoc add last seen","request":"com.zuizz.apidoc.last","method":"GET","description":"Trigger last seen item for the sidebar list ","parameter":[],"states":{"200":{"code":200,"message":"OK","description":"Element wurde in Liste aufgenommen"}},"permission":[{"role":"Developer","description":"Documentation for developer"}],"mimetype":[]}

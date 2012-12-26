@@ -1,0 +1,69 @@
+{"title":"Apidoc Add RESTlet", "request":"com.zuizz.apidoc.new.RESTlet", "method":"PUT", "description":"Add Restlet", "parameter":{
+    "description":{
+        "description":"Description",
+        "name":"description",
+        "type":1,
+        "required":true,
+        "default_value":null,
+        "regularexpression":null
+    },
+    "element":{
+        "description":"Element",
+        "name":"element",
+        "type":1,
+        "required":true,
+        "default_value":null,
+        "regularexpression":null
+    },
+    "feature":{
+        "description":"Feature",
+        "name":"feature",
+        "type":1,
+        "required":true,
+        "default_value":null,
+        "regularexpression":null
+    },
+    "method":{
+        "description":"Request Method",
+        "name":"method",
+        "type":1,
+        "required":true,
+        "default_value":null,
+        "regularexpression":null
+    },
+    "title":{
+        "description":"Title",
+        "name":"title",
+        "type":1,
+        "required":true,
+        "default_value":null,
+        "regularexpression":null
+    }
+}, "states":{
+    "201":{
+        "code":201,
+        "message":"Created",
+        "description":"OK, Restlett sucessfull added"
+    },
+    "500":{
+        "code":500,
+        "message":"Server Error",
+        "description":"Something went wrong"
+    },
+    "400":{
+        "code":400,
+        "message":"Bad",
+        "description":"RESTlet already exists"
+    }
+}, "permission":[
+    {
+        "role":"Developer",
+        "description":"Developer can Add new RESTlet"
+    }
+], "mimetype":{
+    "json":{
+        "name":"json",
+        "is_default":true,
+        "response":"{&quot;message&quot;:&quot;The RESTlet already exists&quot;}\n\n{&quot;message&quot;:&quot;RESTlet sucessfully created&quot;, apidocID:9999}"
+    }
+}}

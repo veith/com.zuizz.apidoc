@@ -1,0 +1,35 @@
+{foreach from=$ZU_feature.data.features key="index" item="feature"}
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a class="accordion-toggle" href="#browse{$index}">
+                {$feature}
+            </a>
+        </div>
+        <div id="browse{$index}" class="accordion-body collapse"  data-feature="{$feature}">
+            <div class="accordion-inner">
+                loading...
+            </div>
+        </div>
+    </div>
+{/foreach}
+
+{foreach from=$ZU_feature.data.element key="index" item="element"}
+         <div class="restlet {$element.method}" data-restlet="{$element.version}.{$ZU_feature.data.request}.{$subview}{$element.method}">
+            V:{$element.version} | {$element.title}
+         </div>
+{/foreach}
+
+{foreach from=$ZU_feature.data.subs key="index" item="subview"}
+<div class="accordion-group">
+    <div class="accordion-heading">
+        <a class="accordion-toggle"  href="#{$ZU_feature.data.request_u}{$index}">
+            {$subview}
+        </a>
+    </div>
+    <div id="{$ZU_feature.data.request_u}{$index}" class="accordion-body collapse"   data-feature="{$ZU_feature.data.request}.{$subview}">
+        <div class="accordion-inner">
+            loading...
+        </div>
+    </div>
+</div>
+{/foreach}

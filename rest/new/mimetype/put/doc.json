@@ -1,0 +1,60 @@
+{"title":"Add Mimetypes", "request":"com.zuizz.apidoc.new.mimetype", "method":"PUT", "description":"Add new mimetype to RESTlet",
+    "parameter":{
+        "default":{
+            "description":"use 1 if this is the default mimetype for the RESTlet",
+            "name":"default",
+            "type":9,
+            "required":true,
+            "default_value":null,
+            "regularexpression":""
+        },
+        "identifier":{
+            "description":"The Apidoc ID is required",
+            "name":"identifier",
+            "type":0,
+            "required":true,
+            "default_value":null,
+            "regularexpression":""
+        },
+        "name":{
+            "description":"The &#34;extension&#34; name, something like .xml but without the dot ==> xml",
+            "name":"name",
+            "type":1,
+            "required":true,
+            "default_value":null,
+            "regularexpression":""
+        },
+        "response":{
+            "description":"Give a response description or example",
+            "name":"response",
+            "type":7,
+            "required":true,
+            "default_value":null,
+            "regularexpression":""
+        }
+    },
+    "states":{
+        "201":{
+            "code":201,
+            "message":"Mimetype successful created",
+            "description":"Mimetype successful created"
+        },
+        "400":{
+            "code":400,
+            "message":"Mimetype already exists",
+            "description":"Mimetype already exists"
+        }
+    },
+    "permission":[
+        {
+            "role":"Developer",
+            "description":"Developer can Add new Mimetype"
+        }
+    ],
+    "mimetype":{
+        "json":{
+            "name":"json",
+            "is_default":true,
+            "response":"On success\n{&quot;message&quot;:&quot;Mimetype sucessfully created&quot;,&quot;mimetypeID&quot;:&quot;16&quot;}"
+        }
+    }}

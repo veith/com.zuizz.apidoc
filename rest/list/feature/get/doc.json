@@ -1,0 +1,39 @@
+{"title":"List all features with restlets",
+    "request":"com.zuizz.apidoc.list.feature",
+    "method":"GET", "description":"List all features",
+    "parameter":{
+        "order":{
+            "description":"0 = alphabetic asc\n1 = alphabetic desc\n2 = create date asc\n3 = create date desc\n4 = mod date asc\n5 = mod date desc",
+            "name":"order",
+            "type":0,
+            "required":false,
+            "default_value":null,
+            "regularexpression":false
+        },
+        "identifier":{
+            "description":"feature",
+            "name":"identifier",
+            "type":1,
+            "required":false,
+            "default_value":null,
+            "regularexpression":false
+        }
+
+    }, "states":{
+    "200":{
+        "code":200,
+        "message":"",
+        "description":"content in response body"
+    }
+}, "permission":[
+    {
+        "role":"Developer",
+        "description":"Developer can see the list"
+    }
+], "mimetype":{
+    "html":{
+        "name":"html",
+        "is_default":true,
+        "response":"complete list"
+    }
+}}

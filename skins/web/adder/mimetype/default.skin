@@ -1,0 +1,49 @@
+<div class="modal hide" id="addMimetype">
+    <div class="modal-header">
+        <a class="close" data-dismiss="modal">×</a>
+
+        <h3>Mimetype</h3>
+    </div>
+    <div class="modal-body">
+        <form class="form-horizontal" id="FormAddMimetype">
+            <fieldset>
+                <div class="control-group">
+                    <label class="control-label" for="f130mname">Extension name</label>
+
+                    <div class="controls">
+                        <input type="text" name="f130mname" id="f130mname">
+                        <p class="help-block">Something like json, gif, xml, html, xml,...</p>
+                    </div>
+
+                </div>
+
+
+                <div class="control-group">
+                    <label class="control-label" for="f130Mdefault">Default</label>
+
+                    <div class="controls">
+                        <label class="checkbox">
+                            <input type="checkbox" id="f130Mdefault" name="f130Mdefault" value="1">
+                            This is the Default Mimetype
+                        </label>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="Mdescription">Description</label>
+
+                    <div class="controls">
+                        <textarea class="input-xlarge" name="f130Mdescription" id="Mdescription"></textarea>
+                        <p class="help-block">Describe with a few sentences what this mimetype responses, or paste the response body</p>
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn btn-primary" id="btnAddMimetype"><i class="icon-plus icon-white"></i> Add Mimetype</a>
+        <a href="#" class="btn" data-dismiss="modal">Close</a>
+
+    </div>
+</div>

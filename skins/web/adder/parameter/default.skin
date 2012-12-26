@@ -1,0 +1,63 @@
+<div class="modal hide" id="addParameter">
+    <div class="modal-header">
+        <a class="close" data-dismiss="modal">×</a>
+
+        <h3>Parameter</h3>
+    </div>
+    <div class="modal-body">
+        <form class="form-horizontal" id="FormAddParameter">
+            <fieldset>
+                <div class="control-group">
+                    <label class="control-label" for="Pname">Name</label>
+
+                    <div class="controls">
+                        <input type="text" name="f130name" id="Pname">
+                    </div>
+
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="Ptype">Type</label>
+                    <div class="controls">
+                        <select class="span2"  name="f130type" id="Ptype">
+                        {foreach from=$ZU_feature.config.definition.type key="KEY" item="TYPE"}
+                            <option value="{$KEY}">{$TYPE}</option>
+                        {/foreach}
+                        </select>
+                        <input type="text" name="f130rexexp" id="Pregexp">
+
+                        <p class="help-block">Define the type and the pattern for the rexp type</p>
+
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="Prequired1">Required</label>
+
+                    <div class="controls">
+                        <label class="radio">
+                            <input type="radio" name="f130required" id="Prequired1" value="1" checked="checked">
+                            True
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="f130required" id="Prequired2" value="0">
+                            False
+                        </label>
+
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="Pdescription">Description</label>
+
+                    <div class="controls">
+                        <textarea class="input-xlarge" name="f130description" id="Pdescription"></textarea>
+                        <p class="help-block">Describe with a few sentences what the parameter is for</p>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn btn-primary" id="btnAddParameter"><i class="icon-plus icon-white"></i> Add Parameter</a>
+        <a href="#" class="btn" data-dismiss="modal">Close</a>
+    </div>
+</div>

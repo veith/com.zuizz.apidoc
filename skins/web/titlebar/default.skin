@@ -1,0 +1,26 @@
+<div class="{'titlebar'|Tc}" data-connectors="viewer">
+
+<div class="content">
+
+</div>
+
+
+{literal}
+    <script class="moustache" name="block" type="text/x-handlebars-template">
+        <div class="pull-right buttons hide">
+            <button name="duplicate" class="btn btn-mini"><i class="icon-tags"></i> Duplicate</button>
+            <button name="newversion" class="btn btn-mini"><i class="icon-plus-sign"></i> new Version</button>
+            <button name="build" class="btn btn-mini"><i class="icon-wrench"></i> build PHP</button>
+        </div>
+
+        <div class="restlet {{method}}" >
+            <h2>{{title}}</h2>
+            <b>Version:</b> {{version}} | <b>Method:</b> {{method}} | <b>URL:</b> /rest/{{version}}/{{request}}<br />
+            create date {{info.cdate}} last modified {{info.mdate}}
+        </div>
+
+
+
+    </script>
+{/literal}
+</div>
