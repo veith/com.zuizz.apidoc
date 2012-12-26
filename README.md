@@ -1,4 +1,4 @@
 com.zuizz.apidoc
 ================
 
-Apidoc editor and reader
+Apidoc editor and reader.
