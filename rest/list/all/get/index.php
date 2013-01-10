@@ -81,6 +81,8 @@ if (!$this->mimetype) {
 
 switch ($this->mimetype) {
     case "html":
+        global $smarty; // smarty object
+        $GLOBALS['ZUIZZ']->init_smarty();
 
         $this->fetch();
 

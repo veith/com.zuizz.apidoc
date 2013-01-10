@@ -94,6 +94,8 @@ switch ($this->mimetype) {
         $this->contentbuffer = $xml->saveXML();
         break;
     case "html":
+        global $smarty; // smarty object
+        $GLOBALS['ZUIZZ']->init_smarty();
 
         $this->fetch();
 
