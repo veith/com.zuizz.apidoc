@@ -15,7 +15,7 @@
 */
 
 
-if (ZU::count('rst_mimetype', array('apidoc_id' => $this->values['identifier'],
+if (ZU::ORMselectCount('rst_mimetype', array('apidoc_id' => $this->values['identifier'],
                                     'name'      => $this->values['name'])) > 0
 ) {
 

@@ -15,7 +15,7 @@
 */
 
 
-if (ZU::count('rst_parameter', array('apidoc_id' => $this->values['identifier'],
+if (ZU::ORMselectCount('rst_parameter', array('apidoc_id' => $this->values['identifier'],
                                      'name'      => $this->values['name'])) > 0
 ) {
 

@@ -45,7 +45,7 @@ If you add a non existing rolename, the builder will automaticly generate the ro
 *
 */
 
-if (ZU::count('rst_role', array('apidoc_id' => $this->values['identifier'],
+if (ZU::ORMselectCount('rst_role', array('apidoc_id' => $this->values['identifier'],
                                 'role'      => $this->values['role'])) > 0
 ) {
     ZU::header(400, 'role is already registered');

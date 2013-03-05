@@ -66,7 +66,7 @@ if (is_file($targetfile)) {
         $sourcecode .= " * " . $tmp->role . " => " . $tmp->description . "\n";
 
         // Noch nicht existierende Rollen eintragen
-        $count = ZU::count('org_functional_role', array('title'=> $tmp->role));
+        $count = ZU::ORMselectCount('org_functional_role', array('title'=> $tmp->role));
         if ($count == 0) {
             echo $tmp->role;
             $role              = ORM::for_table('org_functional_role')->create();

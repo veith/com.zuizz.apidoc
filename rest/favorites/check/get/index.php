@@ -33,7 +33,7 @@
 
 
 
-if(ZU::count('rst_favorites', array('user_id' => ZU::get_user_id(), 'apidoc_id' => $this->identifier)) > 0){
+if(ZU::ORMselectCount('rst_favorites', array('user_id' => ZU::get_user_id(), 'apidoc_id' => $this->identifier)) > 0){
     $this->data['isFavorite'] = true;
 }else{
     $this->data['isFavorite'] = false;

@@ -30,7 +30,7 @@
 */
 
 
-if (ZU::count('rst_apidoc', array('request' => $this->values['feature'] . "." . $this->values['element'],
+if (ZU::ORMselectCount('rst_apidoc', array('request' => $this->values['feature'] . "." . $this->values['element'],
                                   'method'  => $this->values['method'])) > 0
 ) {
 
