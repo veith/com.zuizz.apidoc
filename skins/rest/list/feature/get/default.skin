@@ -5,9 +5,9 @@
                 {$feature}
             </a>
         </div>
-        <div id="browse{$index}" class="accordion-body collapse"  data-feature="{$feature}">
+        <div id="browse{$index}" class="accordion-body"  data-feature="{$feature}">
             <div class="accordion-inner">
-                loading...
+
             </div>
         </div>
     </div>
@@ -26,9 +26,8 @@
             {$subview}
         </a>
     </div>
-    <div id="{$ZU_feature.data.request_u}{$index}" class="accordion-body collapse"   data-feature="{$ZU_feature.data.request}.{$subview}">
+    <div id="{$ZU_feature.data.request_u}{$index}" class="accordion-body"   data-feature="{$ZU_feature.data.request}.{$subview}">
         <div class="accordion-inner">
-            loading...
         </div>
     </div>
 </div>

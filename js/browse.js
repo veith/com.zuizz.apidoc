@@ -36,8 +36,7 @@
                     200:function (response) {
                         // assign content in response body to div
                         $('#APDtabNav').html(response);
-                        $(".collapse",$ctx).collapse('hide');
-
+                        $(".collapse",$ctx).collapse("hide");
                         $(".accordion-toggle",$ctx).on('click',function(){
                             var container = $($(this).attr('href'));
                             if(!container.hasClass('in')){

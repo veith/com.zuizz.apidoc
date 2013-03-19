@@ -53,7 +53,7 @@ var APD = {};
                     self.rsttitle = response.title;
                     APD = response;
                     console.dir(APD);
-                    $('DIV.content', $ctx).html(self.handlebar.block(response));
+                    $('DIV.content', $ctx).html(self.dot.block(response));
                 }
 
             });
@@ -69,7 +69,7 @@ var APD = {};
             var $ctx = this.$ctx,
                 self = this;
 
-            this._initmoustache();
+            this.initDot();
             callback();
         },
 
@@ -84,17 +84,15 @@ var APD = {};
         },
         moustache:{},
         handlebar:{},
-        _initmoustache:function () {
-            // moustaches und Handlebars aufbauen
+        initDot: function () {
             var $ctx = this.$ctx,
                 self = this;
-            $('script', $ctx).each(function (i, e) {
-                var moustache = $(e);
-                var name = moustache.attr('name');
-                self.moustache[name] = moustache.html();
-                self.handlebar[name] = Handlebars.compile((moustache.html()));
-            });
+            self.dot = {};
 
+            $('script', $ctx).each(function (i, e) {
+                var dot = $(e);
+                self.dot[dot.attr('name')] = doT.template(dot.html());
+            });
 
         },
         duplicateRestlet:function(){
