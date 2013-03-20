@@ -7,14 +7,45 @@
         "required":0,
         "default_value":"",
         "regularexpression":""
+    },"title":{
+        "description":"Titel",
+        "name":"title",
+        "type":"1",
+        "required":0,
+        "default_value":"",
+        "regularexpression":""
     }
 
-}, "states":{}, "permission":[
 
+}, "states":{
+    "422":{
+        "code":422,
+        "message":"Nicht verarbeitbare Daten",
+        "description":"Die Daten konnten nicht verarbeitet werden. Allf\u00e4llige Detail sind im response body."
+    },
+    "202":{
+        "code":"202",
+        "message":"OK",
+        "description":"Objekt wurde aktualisiert.\r\nAllf\u00e4llige Details sind im response body."
+    },
+    "404": {
+        "code": 404,
+        "message": "Nicht vorhanden",
+        "description": "Objekt mit Identifier nicht gefunden oder nicht vorhanden"
+    }
+}, "permission":[
+    {
+        "role":"User",
+        "description":"Authentifizierte Benutzer k\u00f6nnen..."
+    },
+    {
+        "role": "Administrator",
+        "description": "Rolle Administrator kann..."
+    }
 ], "mimetype":{
     "json":{
         "name":"json",
         "is_default":true,
-        "response":""
+        "response":"Details zum Vorgang als json Objekt."
     }
 }}

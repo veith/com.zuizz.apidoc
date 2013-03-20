@@ -1,20 +1,43 @@
-{"title":"",
-    "request":"", "method":"", "description":"Please describe the restlet", "parameter":{
-    "identifier":{
-        "description":"Identifier field",
-        "name":"identifier",
-        "type":"0",
-        "required":0,
-        "default_value":"",
-        "regularexpression":""
+{"title": "",
+    "request": "", "method": "", "description": "Please describe the restlet", "parameter": {
+    "identifier": {
+        "description": "Identifier field",
+        "name": "identifier",
+        "type": "0",
+        "required": 0,
+        "default_value": "",
+        "regularexpression": ""
     }
 
-}, "states":{}, "permission":[
-
-], "mimetype":{
-    "json":{
-        "name":"json",
-        "is_default":true,
-        "response":""
+}, "states": {
+    "422": {
+        "code": 422,
+        "message": "Nicht verarbeitbare Daten",
+        "description": "Die Daten konnten nicht verarbeitet werden. Allf\u00e4llige Detail sind im response body."
+    },
+    "405": {
+        "code": 405,
+        "message": "Pflichtfelder fehlen",
+        "description": "Die Daten konnten nicht verarbeitet werden. Allf\u00e4llige Detail sind im response body."
+    },
+    "201": {
+        "code": "201",
+        "message": "OK",
+        "description": "Case erstellt.\r\nCase ID im Response Body"
+    }
+}, "permission": [
+    {
+        "role": "User",
+        "description": "Authentifizierte Benutzer k\u00f6nnen..."
+    },
+    {
+        "role": "Administrator",
+        "description": "Rolle Administrator kann..."
+    }
+], "mimetype": {
+    "json": {
+        "name": "json",
+        "is_default": true,
+        "response": "Details zum Vorgang als json Objekt."
     }
 }}

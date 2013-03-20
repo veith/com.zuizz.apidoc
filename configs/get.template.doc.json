@@ -1,20 +1,101 @@
 {"title":"",
     "request":"", "method":"", "description":"Please describe the restlet", "parameter":{
-    "identifier":{
-        "description":"Identifier field",
-        "name":"identifier",
-        "type":"0",
-        "required":0,
-        "default_value":"",
-        "regularexpression":""
+    "identifier": {
+        "description": "Identifier field",
+        "name": "identifier",
+        "type": "0",
+        "required": 0,
+        "default_value": "",
+        "regularexpression": ""
+    },
+    "q": {
+        "description": "Suchen",
+        "name": "q",
+        "regularexpression": "",
+        "default_value": "",
+        "type": "1",
+        "required": 0
+    },
+    "limit": {
+        "description": "Anzahl der Elemente",
+        "name": "limit",
+        "type": "2",
+        "required": 0,
+        "default_value": "10",
+        "regularexpression": ""
+    },
+    "page": {
+        "description": "Seite",
+        "name": "page",
+        "type": 2,
+        "required": false,
+        "default_value": null,
+        "regularexpression": ""
+    },
+    "scope": {
+        "description": "Scope der Suche (active, inactive)",
+        "name": "scope",
+        "regularexpression": "",
+        "default_value": "",
+        "type": "7",
+        "required": 0
+    },
+    "order": {
+        "description": "Order by activity or alphabetical",
+        "name": "order",
+        "regularexpression": "",
+        "default_value": "alphabetical",
+        "type": "1",
+        "required": 0
+    },
+    "order_dir": {
+        "description": "asc or desc",
+        "name": "order_dir",
+        "regularexpression": "",
+        "default_value": "asc",
+        "type": "1",
+        "required": 0
+    },
+    "fields": {
+        "description": "Array with requested fieldnames",
+        "name": "fields",
+        "regularexpression": "",
+        "default_value": "",
+        "type": "7",
+        "required": 0
+    },
+    "context": {
+        "description": "Context",
+        "name": "context",
+        "regularexpression": "",
+        "default_value": "",
+        "type": "7",
+        "required": 0
     }
-
-}, "states":{}, "permission":[
-
-], "mimetype":{
-    "json":{
-        "name":"json",
-        "is_default":true,
-        "response":""
+}, "states": {
+    "200": {
+        "code": 200,
+        "message": "OK",
+        "description": "Daten sind im Response Body"
+    },
+    "404": {
+        "code": 404,
+        "message": "Nicht vorhanden",
+        "description": "Objekt mit Identifier nicht gefunden oder nicht vorhanden"
+    }
+}, "permission": [
+    {
+        "role": "User",
+        "description": "Authentifizierte Benutzer können..."
+    },
+    {
+        "role": "Administrator",
+        "description": "Rolle Administrator kann..."
+    }
+], "mimetype": {
+    "json": {
+        "name": "json",
+        "is_default": true,
+        "response": ""
     }
 }}
