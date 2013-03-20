@@ -1,0 +1,20 @@
+{"title":"",
+    "request":"", "method":"", "description":"Please describe the restlet", "parameter":{
+    "identifier":{
+        "description":"Identifier field",
+        "name":"identifier",
+        "type":"0",
+        "required":0,
+        "default_value":"",
+        "regularexpression":""
+    }
+
+}, "states":{}, "permission":[
+
+], "mimetype":{
+    "json":{
+        "name":"json",
+        "is_default":true,
+        "response":""
+    }
+}}

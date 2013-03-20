@@ -31,31 +31,34 @@
 
 // prüfe ob das Restlet bereits existiert
 $feature = $this->values['newfeature'];
-$restlet = str_replace(".","/", $this->values['element']);
+$restlet = str_replace(".", "/", $this->values['element']);
 
-$method  = $this->config['definition']['method'][$this->values['method']];
-$target  = ZU_DIR_FEATURE . "{$feature}/rest/{$restlet}/" . strtolower($method) . "/doc.json";
+$method = $this->config['definition']['method'][$this->values['method']];
+$target = ZU_DIR_FEATURE . "{$feature}/rest/{$restlet}/" . strtolower($method) . "/doc.json";
 
-$source = ZU_DIR_FEATURE . "{$this->feature}/configs/template.doc.json";
-
+if ($method == 'PUT' || $method == 'POST' || $method == 'DELETE' || $method == 'GET') {
+    $source = ZU_DIR_FEATURE . "{$this->feature}/configs/{$method}.template.doc.json";
+} else {
+    $source = ZU_DIR_FEATURE . "{$this->feature}/configs/template.doc.json";
+}
 if (is_file($target)) {
     ZU::header(400, 'RESTlet already exist');
     echo "The restlet [{$feature}.{$restlet}] with mehtod [{$method}] already exists.";
 } else {
-    $targetfolder =  pathinfo($target,PATHINFO_DIRNAME);
+    $targetfolder = pathinfo($target, PATHINFO_DIRNAME);
 // Ordner erstellen
-    if(!is_dir($targetfolder)){
+    if (!is_dir($targetfolder)) {
         $oldmask = umask(0);
-        mkdir($targetfolder,0777,true);
+        mkdir($targetfolder, 0777, true);
         umask($oldmask);
     }
 
 
 // json.doc aus template erstellen   (bei neuem objekt das template objekt laden, bei clone das quellobjekt laden)
 
-    if($this->values['source'] != ''){
+    if ($this->values['source'] != '') {
 
-        $farr    = explode(".", $this->values['source']);
+        $farr = explode(".", $this->values['source']);
         $version = $farr[0];
 
         $feature = implode(".", array($farr[1], $farr[2], $farr[3]));
@@ -80,17 +83,15 @@ if (is_file($target)) {
 // werte aktualisieren
 
 
-
-    $doc->title       = $this->values['title'];
-    $doc->request     = "{$feature}.{$this->values['element']}";
-    $doc->method      = $method;
+    $doc->title = $this->values['title'];
+    $doc->request = "{$feature}.{$this->values['element']}";
+    $doc->method = $method;
 
     // Objekt an neuer Stelle sichern
-    file_put_contents($target,json_encode($doc));
+    file_put_contents($target, json_encode($doc));
 
     $this->data['message'] = "RESTlet sucessfully created";
-    $this->data['restlet'] = "0.{$feature}.{$this->values['element']}." . strtolower($method) ;
-
+    $this->data['restlet'] = "0.{$feature}.{$this->values['element']}." . strtolower($method);
 
 
     ZU::header(201);
