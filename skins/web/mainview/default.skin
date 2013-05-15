@@ -1,4 +1,7 @@
 {"default"|ZU_load_css}
+{"jquery.address-1.4.min"|ZU_load_js}
+{"traits.zuizz"|ZU_load_js}
+
 <div class="{'viewer'|Tc}" data-connectors="viewer">
 
     <div class="tabbable">
