@@ -40,19 +40,11 @@
         "type": "7",
         "required": 0
     },
-    "order": {
-        "description": "Order by activity or alphabetical",
-        "name": "order",
+    "sort": {
+        "description": "id,name,-age,-days",
+        "name": "sort",
         "regularexpression": "",
         "default_value": "alphabetical",
-        "type": "1",
-        "required": 0
-    },
-    "order_dir": {
-        "description": "asc or desc",
-        "name": "order_dir",
-        "regularexpression": "",
-        "default_value": "asc",
         "type": "1",
         "required": 0
     },
