@@ -8,6 +8,14 @@
         "default_value": "",
         "regularexpression": ""
     },
+    "parent_identifier": {
+        "description": "",
+        "name": "parent_identifier",
+        "regularexpression": "",
+        "default_value": "",
+        "type": "7",
+        "required": 0
+    },
     "q": {
         "description": "Suchen",
         "name": "q",
@@ -33,7 +41,7 @@
         "regularexpression": ""
     },
     "scope": {
-        "description": "Scope der Suche (active, inactive)",
+        "description": "Scope of the request",
         "name": "scope",
         "regularexpression": "",
         "default_value": "",
@@ -49,16 +57,8 @@
         "required": 0
     },
     "fields": {
-        "description": "Array with requested fieldnames",
+        "description": "comma separated list with fields",
         "name": "fields",
-        "regularexpression": "",
-        "default_value": "",
-        "type": "7",
-        "required": 0
-    },
-    "context": {
-        "description": "Context",
-        "name": "context",
         "regularexpression": "",
         "default_value": "",
         "type": "7",
@@ -68,7 +68,12 @@
     "200": {
         "code": 200,
         "message": "OK",
-        "description": "Daten sind im Response Body"
+        "description": "Data is in response body"
+    },
+    "204": {
+        "code": 204,
+        "description": "Request response have no content",
+        "message": "No Content"
     },
     "404": {
         "code": 404,
