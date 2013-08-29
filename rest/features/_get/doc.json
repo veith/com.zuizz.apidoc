@@ -1,0 +1,32 @@
+{"title": "List all features with restlets",
+    "request": "com.zuizz.apidoc.list.feature",
+    "method": "GET", "description": "List all features",
+    "parameter": {
+
+        "identifier": {
+            "description": "feature",
+            "name": "identifier",
+            "type": 1,
+            "required": false,
+            "default_value": null,
+            "regularexpression": false
+        }
+
+    }, "states": {
+    "200": {
+        "code": 200,
+        "message": "",
+        "description": "content in response body"
+    }
+}, "permission": [
+    {
+        "role": "Developer",
+        "description": "Developer can see the list"
+    }
+], "mimetype": {
+    "html": {
+        "name": "html",
+        "is_default": true,
+        "response": "complete list"
+    }
+}}

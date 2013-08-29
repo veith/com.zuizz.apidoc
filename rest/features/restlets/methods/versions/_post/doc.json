@@ -1,0 +1,34 @@
+{"title": "Add new version for a restlet method",
+    "request": "/api/0/com.zuizz.apidoc/features/[feature]/restlets/[restlet[.restlet]]/methods/[get][.version]/versions",
+    "method": "GET",
+    "description": "Add new version for a restlet method by copying the latest version or a given version",
+    "expands":["parameter","states","permissions","mimetypes","expands"],
+    "parameter": {
+
+        "identifier": {
+            "description": "method",
+            "name": "identifier",
+            "type": 1,
+            "required": true,
+            "default_value": null,
+            "regularexpression": false
+        }
+
+    }, "states": {
+    "200": {
+        "code": 200,
+        "message": "",
+        "description": "content in response body"
+    }
+}, "permission": [
+    {
+        "role": "Developer",
+        "description": "Developer can see the method details"
+    }
+], "mimetype": {
+    "json": {
+        "name": "json",
+        "is_default": true,
+        "response": "this files"
+    }
+}}

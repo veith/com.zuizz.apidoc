@@ -7,14 +7,13 @@
         "required": 0,
         "default_value": "",
         "regularexpression": ""
-    },
-    "parent_identifier": {
-        "description": "",
-        "name": "parent_identifier",
-        "regularexpression": "",
+    },"identifiers": {
+        "description": "Array with all identifiers in path",
+        "name": "identifiers",
+        "type": "1",
+        "required": 0,
         "default_value": "",
-        "type": "7",
-        "required": 0
+        "regularexpression": ""
     },
     "q": {
         "description": "Suchen",
@@ -41,7 +40,7 @@
         "regularexpression": ""
     },
     "scope": {
-        "description": "Scope of the request. -id,age orders id desc and age asc",
+        "description": "Scope of the request.",
         "name": "scope",
         "regularexpression": "",
         "default_value": "",
@@ -49,10 +48,10 @@
         "required": 0
     },
     "sort": {
-        "description": "id,name,-age,-days",
+        "description": "Sort by and direction like: id,name,-age,-days",
         "name": "sort",
         "regularexpression": "",
-        "default_value": "alphabetical",
+        "default_value": "",
         "type": "1",
         "required": 0
     },
@@ -60,7 +59,7 @@
         "description": "comma separated list with fields. * is default",
         "name": "fields",
         "regularexpression": "",
-        "default_value": "*",
+        "default_value": "",
         "type": "1",
         "required": 0
     },
@@ -84,9 +83,19 @@
         "message": "No Content"
     },
     "404": {
+        "code": 400,
+        "message": "Bad Request",
+        "description": "Required fieds missing"
+    },
+    "404": {
         "code": 404,
         "message": "Nicht vorhanden",
         "description": "Objekt mit Identifier nicht gefunden oder nicht vorhanden"
+    },
+    "422": {
+        "code": 422,
+        "message": "Unprocessable Entity",
+        "description": "Type mismatch, some fields are not sent as excepted. Please check the documentation"
     }
 }, "permission": [
     {

@@ -1,0 +1,36 @@
+{"title": "List sources for a restlet",
+    "request": "/api/0/com.zuizz.apidoc/features/(feature)/restlets/(restlet)[.children]/methods/(method)[.0]/parameters/",
+    "method": "GET", "description": "List all features",
+    "parameter": {
+        "identifier": {
+            "description": "Language (zujs,jquery,ios,...)",
+            "name": "identifier",
+            "type": 1,
+            "required": false,
+            "default_value": null,
+            "regularexpression": false
+        }
+
+    }, "states": {
+    "200": {
+        "code": 200,
+        "message": "",
+        "description": "content in response body"
+    }
+}, "permission": [
+    {
+        "role": "Developer",
+        "description": "Developer can see the list"
+    }
+], "mimetype": {
+    "json": {
+        "name": "json",
+        "is_default": true,
+        "response": ""
+    } ,
+    "raw": {
+        "name": "raw",
+        "is_default": false,
+        "response": "sourcecode"
+    }
+}}

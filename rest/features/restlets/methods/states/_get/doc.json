@@ -1,0 +1,23 @@
+{"title": "List states for a restlet",
+    "request": "/api/0/com.zuizz.apidoc/features/(feature)/restlets/(restlet)[.children]/methods/(method)[.0]/states/",
+    "method": "GET", "description": "List all features",
+    "parameter": {
+
+    }, "states": {
+    "200": {
+        "code": 200,
+        "message": "",
+        "description": "content in response body"
+    }
+}, "permission": [
+    {
+        "role": "Developer",
+        "description": "Developer can see the list"
+    }
+], "mimetype": {
+    "json": {
+        "name": "json",
+        "is_default": true,
+        "response": "list"
+    }
+}}

@@ -1,0 +1,72 @@
+<div class="{"sidenav"|Tc}" data-connectors="sidenav">
+
+
+    <div class="featurelist lvl lvl-0">
+    </div>
+
+
+    {literal}
+        <script class="dot" type="text/text/x-dot-template" name="featurelist">
+            <h3><span class="title">Features</span></h3>
+            <ul class="nav nav-list">
+
+                {{~it :f}}
+                <li><a href="{{=f.href_restlets}}" data-name="{{=f.name}}">{{=f.name}}</a></li>
+                {{~}}
+            </ul>
+        </script>
+        <script class="dot" type="text/text/x-dot-template" name="restletlist">
+            <div class="restletlist lvl lvl-{{=it.level}}">
+                <h3 title="Restlet">
+                    {{=it.info.restlet}}
+
+                    <a class="btn btn-small btn-info pull-right tcb tcb-back" data-level="{{=it.level}}"><i
+                                class="icon icon-arrow-left"></i> </a></h3>
+                <h4 title="Feature">{{=it.info.feature}}</h4>
+                <h5 title="Path">{{=it.info.restlet_path}}                 </h5>
+
+                <h4>Methods</h4>
+                <ul class="nav nav-list methods">
+                    {{~it.methods :m}}
+                    <li class="{{=m.method}}"><a href="{{=m.href}}" data-method="{{=m.method}}">
+                            <small>[{{=m.method}} | V{{=m.version}}]</small>
+                            {{=m.title}}</a></li>
+                    {{~}}
+                </ul>
+                <div class="btn-group">
+                    <a class="btn btn-mini btn-success"><i class="icon icon-plus"></i> GET</a>
+                    <a class="btn btn-mini btn-warning"><i class="icon icon-plus"></i> PUT</a>
+                    <a class="btn btn-mini btn-info"><i class="icon icon-plus"></i> POST</a>
+                    <a class="btn btn-mini btn-danger"><i class="icon icon-plus"></i> DELETE</a>
+                </div>
+                <hr>
+
+                {{?it.children}}
+                <h4>Subrestlets</h4>
+                <ul class="nav nav-list restlets">
+                    {{~it.children :f}}
+                    <li><a href="{{=f.href}}" data-name="{{=f.name}}">{{=f.name}}</a></li>
+                    {{~}}
+                </ul>
+                {{?}}
+            </div>
+        </script>
+        <script class="dot" type="text/text/x-dot-template" name="featuredetail">
+            <div class="restletlist lvl lvl-{{=it.level}}">
+                <h4 title="Feature">
+                    {{=it.info.feature}}<a class="btn btn-small btn-info pull-right tcb tcb-back"
+                                           data-level="{{=it.level}}"><i class="icon icon-arrow-left"></i> </a></h4>
+
+
+                {{?it.children}}
+
+                <ul class="nav nav-list restlets">
+                    {{~it.children :f}}
+                    <li><a href="{{=f.href}}" data-name="{{=f.name}}">{{=f.name}}</a></li>
+                    {{~}}
+                </ul>
+                {{?}}
+            </div>
+        </script>
+    {/literal}
+</div>

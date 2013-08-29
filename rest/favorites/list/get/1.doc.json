@@ -1,1 +1,0 @@
-{"title":"Apidoc favorites list","request":"com.zuizz.apidoc.favorites.list","method":"GET","description":"Favorites list","parameter":[],"states":[],"permission":[{"role":"Developer","description":"Documentation for developer"}],"mimetype":{"html":{"name":"html","is_default":true,"response":"html formated list"}}}
