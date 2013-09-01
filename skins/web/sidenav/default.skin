@@ -7,7 +7,7 @@
 
     {literal}
         <script class="dot" type="text/text/x-dot-template" name="featurelist">
-            <h3><span class="title">Features</span></h3>
+            <div class="segment-line">Features</div>
             <ul class="nav nav-list">
 
                 {{~it :f}}
@@ -17,15 +17,16 @@
         </script>
         <script class="dot" type="text/text/x-dot-template" name="restletlist">
             <div class="restletlist lvl lvl-{{=it.level}}">
-                <h3 title="Restlet">
-                    {{=it.info.restlet}}
+                <div class="segment-line">About <a class="btn btn-small btn-info pull-right tcb tcb-back" data-level="{{=it.level}}"><i
+                                class="icon icon-arrow-left"></i> </a></div>
 
-                    <a class="btn btn-small btn-info pull-right tcb tcb-back" data-level="{{=it.level}}"><i
-                                class="icon icon-arrow-left"></i> </a></h3>
-                <h4 title="Feature">{{=it.info.feature}}</h4>
-                <h5 title="Path">{{=it.info.restlet_path}}                 </h5>
 
-                <h4>Methods</h4>
+
+                <small class="light">Feature</small> {{=it.info.feature}}<br>
+                <small class="light">Restlet</small> {{=it.info.restlet}}
+
+
+                <div class="segment-line">Methods</div>
                 <ul class="nav nav-list methods">
                     {{~it.methods :m}}
                     <li class="{{=m.method}}"><a href="{{=m.href}}" data-method="{{=m.method}}">
@@ -33,16 +34,18 @@
                             {{=m.title}}</a></li>
                     {{~}}
                 </ul>
+                <div class="well-small">
                 <div class="btn-group">
                     <a class="btn btn-mini btn-success"><i class="icon icon-plus"></i> GET</a>
                     <a class="btn btn-mini btn-warning"><i class="icon icon-plus"></i> PUT</a>
                     <a class="btn btn-mini btn-info"><i class="icon icon-plus"></i> POST</a>
                     <a class="btn btn-mini btn-danger"><i class="icon icon-plus"></i> DELETE</a>
                 </div>
+                </div>
                 <hr>
 
                 {{?it.children}}
-                <h4>Subrestlets</h4>
+                <div class="segment-line">Subrestlets</div>
                 <ul class="nav nav-list restlets">
                     {{~it.children :f}}
                     <li><a href="{{=f.href}}" data-name="{{=f.name}}">{{=f.name}}</a></li>
@@ -53,11 +56,9 @@
         </script>
         <script class="dot" type="text/text/x-dot-template" name="featuredetail">
             <div class="restletlist lvl lvl-{{=it.level}}">
-                <h4 title="Feature">
-                    {{=it.info.feature}}<a class="btn btn-small btn-info pull-right tcb tcb-back"
-                                           data-level="{{=it.level}}"><i class="icon icon-arrow-left"></i> </a></h4>
 
 
+                <div class="segment-line">Restlets<a class="btn btn-small btn-info pull-right tcb tcb-back" data-level="{{=it.level}}"><i class="icon icon-arrow-left"></i> </a></div>
                 {{?it.children}}
 
                 <ul class="nav nav-list restlets">
@@ -66,6 +67,9 @@
                     {{~}}
                 </ul>
                 {{?}}
+            <div class="well-small">
+                <a class="btn btn-mini btn-info" title="Add a new restlet"><i class="icon-plus"></i></a>
+            </div>
             </div>
         </script>
     {/literal}

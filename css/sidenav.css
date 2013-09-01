@@ -6,9 +6,17 @@ div.modSidenav .lvl {
     display: none;
 }
 
-
 div.modSidenav li.get a {
-     border-left-color: green;
+     border-left-color: #5cb85c;
 }
 
+div.modSidenav li.delete a {
+     border-left-color: #d9534f;
+}
 
+div.modSidenav li.put a {
+     border-left-color: #f0ad4e;
+}
+div.modSidenav li.post a {
+     border-left-color: #5bc0de;
+}

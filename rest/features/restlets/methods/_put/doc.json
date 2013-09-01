@@ -1,0 +1,51 @@
+{"title":"Save content of the general tab", "request":"/api/0/com.zuizz.apidoc/features/[feature]/restlets/[restlet[.restlet]]/methods/", "method":"PUT", "description":"Save content of the general tab.", "parameter":{
+    "description":{
+        "description":"Description",
+        "name":"description",
+        "type":1,
+        "required":false,
+        "default_value":null,
+        "regularexpression":null
+    },
+    "identifier":{
+        "description":"restlet",
+        "name":"identifier",
+        "type":1,
+        "required":true,
+        "default_value":null,
+        "regularexpression":null
+    },
+    "title":{
+        "description":"Title",
+        "name":"title",
+        "type":1,
+        "required":false,
+        "default_value":null,
+        "regularexpression":null
+    },
+    "request":{
+        "description":"request example",
+        "name":"request",
+        "type":1,
+        "required":false,
+        "default_value":null,
+        "regularexpression":null
+    }
+}, "states":{
+    "200":{
+        "code":200,
+        "message":"Saved",
+        "description":"OK, Restlett sucessfull added"
+    }
+}, "permission":[
+    {
+        "role":"Developer",
+        "description":"Developer can Add new RESTlet"
+    }
+], "mimetype":{
+    "json":{
+        "name":"json",
+        "is_default":true,
+        "response":"{&quot;message&quot;:&quot;The RESTlet already exists&quot;}\n\n{&quot;message&quot;:&quot;RESTlet sucessfully created&quot;, apidocID:9999}"
+    }
+}}

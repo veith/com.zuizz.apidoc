@@ -1,0 +1,21 @@
+.modMethoddisplay .segment-line{
+    margin-top: 25px;
+}
+
+.modMethoddisplay .tcb-saveGeneral, .modMethoddisplay .tcb-saveParameters, .modMethoddisplay .rex{
+    display: none;
+}
+
+
+.modMethoddisplay .tcb-deleteParameter{
+    display: none;
+}
+
+
+.modMethoddisplay div.parameter:hover .tcb-deleteParameter{
+    display: block;
+}
+
+.modMethoddisplay .well-inverse ,.modMethoddisplay .well-danger{
+    margin-top: 25px;
+}

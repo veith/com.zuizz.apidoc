@@ -1,18 +1,13 @@
-{"title": "List all features with restlets",
-    "request": "com.zuizz.apidoc.list.feature",
-    "method": "GET", "description": "List all features",
-    "parameter": {
-
-        "identifier": {
-            "description": "feature",
-            "name": "identifier",
-            "type": 1,
-            "required": false,
-            "default_value": null,
-            "regularexpression": false
-        }
-
-    }, "states": {
+{"title": "List restlets for a feature", "request": "com.zuizz.apidoc.list.feature", "method": "GET", "description": "List all featuressssss", "parameter": {
+    "identifier": {
+        "description": "feature",
+        "name": "identifier",
+        "type": 1,
+        "required": false,
+        "default_value": null,
+        "regularexpression": false
+    }
+}, "states": {
     "200": {
         "code": 200,
         "message": "",

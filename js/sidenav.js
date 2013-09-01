@@ -49,7 +49,7 @@
             });
 
             $ctx.on('click', '.restletlist ul.restlets li a', function () {
-                $('.thelist ul.restlets li', $ctx).removeClass('active');
+                $('.restletlist ul.restlets li', $ctx).removeClass('active');
                 $(this).parent().addClass('active');
                 self.rest.restlets = new Tc.zu.rest($(this).attr('href'));
                 self.rest.restlets.list({200: function (d) {
@@ -60,9 +60,9 @@
             });
             // click on method
             $ctx.on('click', '.restletlist ul.methods li a', function () {
-                $('.thelist ul.methods li', $ctx).removeClass('active');
+                $('.restletlist ul.methods li', $ctx).removeClass('active');
                 $(this).parent().addClass('active');
-                self.fire('methodSelected', {'level': self.level, 'method':$(this).data('method'),'href':$(this).attr('href')});
+                self.fire('methodSelected', {'level': self.level, 'method': $(this).data('method'), 'href': $(this).attr('href')});
 
                 return false;
             });
@@ -80,9 +80,7 @@
         renderRestlets: function (data) {
             var $ctx = this.$ctx,
                 self = this;
-
             data.level = self.level + 1;
-
 
             if ($('.lvl-' + (self.level + 1), $ctx).length == 0) {
                 $('.lvl-' + (self.level), $ctx).after(self.dot.restletlist(data));
@@ -94,21 +92,20 @@
             self.fire('restletSelected', {'level': self.level, 'info': data.info});
             $('.lvl', $ctx).slideUp();
             $('.lvl-' + self.level).delay(400).slideDown();
-
         },
         renderFeatureDetails: function (data) {
             var $ctx = this.$ctx,
                 self = this;
-            data.level = self.level + 1;
+            data.level = 1;
 
             $('.lvl', $ctx).slideUp();
-            if ($('.lvl-' + (self.level + 1), $ctx).length == 0) {
-                $('.lvl-' + self.level, $ctx).after(self.dot.featuredetail(data));
+            if ($('.lvl-1', $ctx).length == 0) {
+                $('.lvl-0', $ctx).after(self.dot.featuredetail(data));
             } else {
-                $('.lvl-' + self.level + 1, $ctx).html(self.dot.featuredetail(data));
+                $('.lvl-1', $ctx).html(self.dot.featuredetail(data));
             }
 
-            self.level = self.level + 1;
+            self.level = 1;
             self.fire('featureSelected', {'level': self.level, 'info': data.info});
             $('.lvl-' + self.level).delay(400).slideDown();
 
@@ -121,6 +118,56 @@
             self.fire('navigationLevelBack', {'level': self.level});
             $('.lvl').slideUp();
             $('.lvl-' + self.level).delay(400).slideDown();
+        },
+
+        onRootNodeSelected: function (d) {
+            var $ctx = this.$ctx,
+                self = this;
+            //hide all and show lvl-0
+            if (self.level != d.level) {
+                self.level = d.level;
+                $('.lvl').slideUp();
+                $('.lvl-0').slideDown();
+            }
+
+        },
+
+        onFeatureNodeSelected: function (d) {
+            var $ctx = this.$ctx,
+                self = this;
+            //hide all and show lvl-0
+            if (self.level != d.level) {
+                self.level = d.level;
+                $('.lvl').slideUp();
+                $('.lvl-' + d.level).slideDown();
+            }
+
+        },
+        onMethodNodeSelected: function (d) {
+            var $ctx = this.$ctx,
+                self = this;
+
+
+            //hide all and show lvl-0
+            if (self.level != d.level) {
+                self.level = d.level;
+                $('.lvl').slideUp();
+                $('.lvl-' + d.level).slideDown();
+            }
+
+        },
+
+        onRestletNodeSelected: function (d) {
+            var $ctx = this.$ctx,
+                self = this;
+            //hide all and show lvl-0
+
+            if (self.level != d.level) {
+                self.level = d.level;
+                $('.lvl').slideUp();
+                $('.lvl-' + d.level).slideDown();
+            }
+
         },
         /**
          * Hook function to do all of your module stuff.

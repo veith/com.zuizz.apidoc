@@ -1,0 +1,66 @@
+{"title": "Save parameter of a restlet", "request": "\/api\/0\/com.zuizz.apidoc\/features\/[feature]\/restlets\/[restlet[.restlet]]\/methods\/get.0\/parameter\/identifier", "method": "PUT", "description": "Save a specified parameter of a restlet.", "parameter": {
+    "description": {
+        "description": "Description",
+        "name": "description",
+        "type": 1,
+        "required": false,
+        "default_value": null,
+        "regularexpression": null
+    },
+    "identifier": {
+        "description": "parameter",
+        "name": "identifier",
+        "type": 1,
+        "required": true,
+        "default_value": null,
+        "regularexpression": null
+    },
+    "type": {
+        "description": "type",
+        "name": "type",
+        "type": 1,
+        "required": false,
+        "default_value": null,
+        "regularexpression": null
+    },
+    "regularexpression": {
+        "description": "regularexpression",
+        "name": "regularexpression",
+        "type": 1,
+        "required": false,
+        "default_value": null,
+        "regularexpression": null
+    },"default_value": {
+        "description": "default_value",
+        "name": "default_value",
+        "type": 1,
+        "required": false,
+        "default_value": null,
+        "regularexpression": null
+    },
+    "required": {
+        "description": "request example",
+        "name": "required",
+        "type": 1,
+        "required": false,
+        "default_value": null,
+        "regularexpression": null
+    }
+}, "states": {
+    "202": {
+        "code": 202,
+        "message": "Accepted",
+        "description": "OK, Parameter set"
+    }
+}, "permission": [
+    {
+        "role": "Developer",
+        "description": "Developer can Add new RESTlet"
+    }
+], "mimetype": {
+    "json": {
+        "name": "json",
+        "is_default": true,
+        "response": "{&quot;message&quot;:&quot;The RESTlet already exists&quot;}\n\n{&quot;message&quot;:&quot;RESTlet sucessfully created&quot;, apidocID:9999}"
+    }
+}}

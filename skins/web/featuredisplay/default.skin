@@ -1,0 +1,10 @@
+<div class="{"featuredisplay"|Tc}" data-connectors="sidenav">
+
+    {literal}
+    <script class="dot" type="text/text/x-dot-template" name="feature">
+        <div class="segment-line">{{=it.feature}}</div>
+        <div class="readme">{{=it.readme}}</div>
+    </script>
+    {/literal}
+
+</div>

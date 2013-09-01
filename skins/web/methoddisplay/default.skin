@@ -1,0 +1,203 @@
+<div class="{"methoddisplay"|Tc}" data-connectors="sidenav">
+    <div class="tabbable">
+        <ul class="nav nav-tabs" id="APIDOC" data-target="APDcontent">
+            <li class="active"><a id="APDtcGeneral" href="#APIDOCGeneral" data-toggle="tab"><i
+                            class="icon-file-text"></i> General</a></li>
+            <li><a id="APDtcParameter" href="#APIDOCParameter" data-toggle="tab"><i class="icon-file"></i>
+                    Parameters</a>
+            </li>
+            <li><a id="APDtcMimetypes" href="#APIDOCMimetypes" data-toggle="tab"><i class="icon-share"></i>
+                    Mimetypes</a>
+            </li>
+            <li><a id="APDtcStates" href="#APIDOCStates" data-toggle="tab"><i class="icon-random"></i> States</a></li>
+            <li><a id="APDtcPermissions" href="#APIDOCPermission" data-toggle="tab"><i class="icon-lock"></i>
+                    Permissions</a></li>
+            <li><a id="APDtcCacheing" href="#APIDOCCacheing" data-toggle="tab"><i class="icon-calendar"></i> Cache</a>
+            </li>
+            <li><a id="APDtcCode" href="#APIDOCCode" data-toggle="tab"><i class="icon-download"></i> Sources</a></li>
+        </ul>
+
+        <div class="tab-content" id="APDcontent">
+
+            <div class="tab-pane active" id="APIDOCGeneral">
+                <button class="btn btn-small btn-danger tcb tcb-saveGeneral pull-right">Save</button>
+                <h3 class="tc-general tc-general-title" contenteditable="true">Title</h3>
+
+                <div class="tc-general tc-general-description" contenteditable="true">Enter description</div>
+                <div class="segment-line">How to request</div>
+                <code class="tc-general tc-general-request" contenteditable="true">/api/0/com.zuizz.apidoc/features/com.zuizz.apidoc/restlets/features/methods/get.json</code>
+
+                <div class="segment-line">Info</div>
+
+                <div class="row">
+                    <div class="col-md-2">
+                        <small class="light">Feature</small>
+                    </div>
+                    <div class="col-md-10 tc-info tc-info-feature"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <small class="light">Restlet</small>
+                    </div>
+                    <div class="col-md-10 tc-info tc-info-restlet"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <small class="light">Version</small>
+                    </div>
+                    <div class="col-md-10 tc-info tc-info-version"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <small class="light">Create Date</small>
+                    </div>
+                    <div class="col-md-10 tc-info tc-info-cdate"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <small class="light">Modified</small>
+                    </div>
+                    <div class="col-md-10 tc-info tc-info-mdate"></div>
+                </div>
+
+            </div>
+
+            <div class="tab-pane" id="APIDOCParameter">
+                <button class="btn btn-small btn-danger tcb tcb-saveParameters pull-right">Save</button>
+                <h3>Parameters</h3>
+
+                <div class="parameterlist">
+                    There are no parameters for this method defined.
+                </div>
+
+                <h3>Add new parameter</h3>
+                <div class="segment-line tc-new tc-new-name" contenteditable="true">Name</div>
+                <button class="btn btn-small btn-primary tcb tcb-addParameter pull-right" data-parameter="new"><i
+                            class="icon-plus"></i></button>
+                <div class="tc-new tc-new-description" contenteditable="true">Description</div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-2">Type</div>
+                    <div class="col-md-10">
+                        <select name="a" class="tc-new tc-new-type col-md-4">
+                            <option value="0">numeric</option>
+                            <option value="1">string</option>
+                            <option value="2">int</option>
+                            <option value="3">float</option>
+                            <option value="4">email</option>
+                            <option value="5">regularexpression</option>
+                            <option value="6">url</option>
+                            <option value="7">unsafe</option>
+                            <option value="8">ip adress</option>
+                            <option value="9">boolean</option>
+                            <option value="10">array</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row hide">
+                    <div class="col-md-2">RegExp</div>
+                    <div class="col-md-10"><input type="text"
+                                                  class="tc-new tc-new-regularexpression col-md-6"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-2">Required</div>
+                    <div class="col-md-10">
+                        <select name="a" class="tc-new tc-new-required col-md-4" id="">
+                            <option value="1">True</option>
+                            <option value="0">False</option>
+
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">Default Value</div>
+                    <div class="col-md-10"><input type="text" class="tc-new tc-new-default_value col-md-6">
+                    </div>
+                </div>
+
+                <hr>
+
+                {literal}
+                    <script class="dot" type="text/text/x-dot-template" name="parameters">
+                        <div class="parameter well-inverse p{{=it.name}}">
+                            <button class="btn btn-small btn-danger tcb tcb-deleteParameter pull-right"
+                                    data-parameter="{{=it.name}}"><i class="icon-remove"></i></button>
+                            <div class="segment-line tc-P{{=it.name}} tc-P{{=it.name}}-name">
+                                Parameter name
+                            </div>
+
+                            <div class="tc-P{{=it.name}} tc-P{{=it.name}}-description" contenteditable="true">
+                                {{=it.description}}
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-2">Type</div>
+                                <div class="col-md-10">
+                                    <select name="a" class="tc-P{{=it.name}} tc-P{{=it.name}}-type col-md-4">
+                                        <option value="0">numeric</option>
+                                        <option value="1">string</option>
+                                        <option value="2">int</option>
+                                        <option value="3">float</option>
+                                        <option value="4">email</option>
+                                        <option value="5">regularexpression</option>
+                                        <option value="6">url</option>
+                                        <option value="7">unsafe</option>
+                                        <option value="8">ip adress</option>
+                                        <option value="9">boolean</option>
+                                        <option value="10">array</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row rex rex-{{=it.name}}">
+                                <div class="col-md-2">RegExp</div>
+                                <div class="col-md-10"><input type="text"
+                                                              class="tc-P{{=it.name}} tc-P{{=it.name}}-regularexpression col-md-6">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-2">Required</div>
+                                <div class="col-md-10">
+                                    <select name="a" class="tc-P{{=it.name}} tc-P{{=it.name}}-required col-md-4" id="">
+                                        <option value="1">True</option>
+                                        <option value="0">False</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2">Default Value</div>
+                                <div class="col-md-10"><input type="text"
+                                                              class="tc-P{{=it.name}} tc-P{{=it.name}}-default_value col-md-6">
+                                </div>
+                            </div>
+
+                        </div>
+                    </script>
+                {/literal}
+            </div>
+
+            <div class="tab-pane" id="APIDOCMimetypes">
+                MimetypedefaultDescription
+            </div>
+
+            <div class="tab-pane" id="APIDOCStates">
+                StateMessageDescription
+            </div>
+
+            <div class="tab-pane" id="APIDOCPermission">
+                RoleDescription / Reason
+            </div>
+
+            <div class="tab-pane" id="APIDOCCacheing">
+                Not implemented yet.
+            </div>
+
+            <div class="tab-pane" id="APIDOCCode">
+                php,zujs,ajax,...
+            </div>
+
+        </div>
+    </div>
+</div>

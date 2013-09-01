@@ -1,6 +1,6 @@
 <div class="{"breadcrumb"|Tc}" data-connectors="sidenav">
 <ol class="breadcrumb">
-    <li><a href="#" class="tcb tcb-navigation">Features</a></li>
+    <li><a href="#" class="tcb tcb-rootnode" data-level="0">Features</a></li>
 
 </ol>
 </div>
