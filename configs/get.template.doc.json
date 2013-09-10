@@ -1,5 +1,5 @@
-{"title":"",
-    "request":"", "method":"", "description":"Please describe the restlet", "parameter":{
+{"title": "",
+    "request": "", "method": "", "description": "Please describe the restlet", "parameter": {
     "identifier": {
         "description": "Identifier field",
         "name": "identifier",
@@ -7,7 +7,8 @@
         "required": 0,
         "default_value": "",
         "regularexpression": ""
-    },"identifiers": {
+    },
+    "identifiers": {
         "description": "Array with all identifiers in path",
         "name": "identifiers",
         "type": "1",
@@ -92,10 +93,20 @@
         "message": "Nicht vorhanden",
         "description": "Objekt mit Identifier nicht gefunden oder nicht vorhanden"
     },
+    "405": {
+        "code": 405,
+        "message": "Pflichtfelder fehlen",
+        "description": "Die Daten konnten nicht verarbeitet werden. Allf\u00e4llige Detail sind im response body."
+    },
     "422": {
         "code": 422,
         "message": "Unprocessable Entity",
         "description": "Type mismatch, some fields are not sent as excepted. Please check the documentation"
+    },
+    "500": {
+        "code": 500,
+        "message": "Internal Server Error",
+        "description": "Internal Server Error"
     }
 }, "permission": [
     {

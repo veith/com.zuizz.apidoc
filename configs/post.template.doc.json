@@ -10,20 +10,36 @@
     }
 
 }, "states": {
-    "422": {
-        "code": 422,
-        "message": "Nicht verarbeitbare Daten",
-        "description": "Die Daten konnten nicht verarbeitet werden. Allf\u00e4llige Detail sind im response body."
-    },
-    "405": {
-        "code": 405,
-        "message": "Pflichtfelder fehlen",
-        "description": "Die Daten konnten nicht verarbeitet werden. Allf\u00e4llige Detail sind im response body."
-    },
+
+
     "201": {
         "code": "201",
         "message": "OK",
         "description": "Case erstellt.\r\nCase ID im Response Body"
+    },
+    "404": {
+        "code": 400,
+        "message": "Bad Request",
+        "description": "Required fieds missing"
+    },
+    "404": {
+        "code": 404,
+        "message": "Nicht vorhanden",
+        "description": "Objekt mit Identifier nicht gefunden oder nicht vorhanden"
+    },"405": {
+        "code": 405,
+        "message": "Pflichtfelder fehlen",
+        "description": "Die Daten konnten nicht verarbeitet werden. Allf\u00e4llige Detail sind im response body."
+    },
+    "422": {
+        "code": 422,
+        "message": "Unprocessable Entity",
+        "description": "Type mismatch, some fields are not sent as excepted. Please check the documentation"
+    },
+    "500": {
+        "code": 500,
+        "message": "Internal Server Error",
+        "description": "Internal Server Error"
     }
 }, "permission": [
     {

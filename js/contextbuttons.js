@@ -35,7 +35,7 @@
 
             self.restlet_data[d.level] = d.info;
             self.showAddRestlet();
-
+            self.current_level = d.level;
 
         },
         onFeatureNodeSelected: function (d) {
@@ -59,16 +59,60 @@
             self.showAddRestletAndMethods(self.restlet_data[d.level].methods);
             self.current_level = d.level;
         },
+        'tcb-addGet': function (button) {
+            var $ctx = this.$ctx,
+                self = this;
+            var i = self.restlet_data[self.current_level];
+            var data = {'feature': i.feature, 'path': i.restlet_path, 'method': 'get'}
+            self.api.method.add(data, {201: function (r) {
+                self.fire('reloadCurrentLevel',{'level':self.current_level});
+            }})
+
+        },
+        'tcb-addPut': function (button) {
+            var $ctx = this.$ctx,
+                self = this;
+            var i = self.restlet_data[self.current_level];
+            var data = {'feature': i.feature, 'path': i.restlet_path, 'method': 'put'}
+            self.api.method.add(data, {201: function (r) {
+               self.fire('reloadCurrentLevel',{'level':self.current_level});
+            }})
+
+        }, 'tcb-addPost': function (button) {
+            var $ctx = this.$ctx,
+                self = this;
+            var i = self.restlet_data[self.current_level];
+            var data = {'feature': i.feature, 'path': i.restlet_path, 'method': 'post'}
+            self.api.method.add(data, {201: function (r) {
+
+                self.fire('reloadCurrentLevel',{'level':self.current_level});
+            }})
+
+        }, 'tcb-addDelete': function (button) {
+            var $ctx = this.$ctx,
+                self = this;
+
+            var i = self.restlet_data[self.current_level];
+            var data = {'feature': i.feature, 'path': i.restlet_path, 'method': 'delete'}
+            self.api.method.add(data, {201: function (r) {
+
+                self.fire('reloadCurrentLevel',{'level':self.current_level});
+            }})
+
+        },
 
         'tcb-addRestlet': function (button) {
             var $ctx = this.$ctx,
                 self = this;
-                var n = prompt('Please enter the name of the restlet');
+            var n = prompt('Please enter the name of the restlet');
 
             //Post data
+
             var i = self.restlet_data[self.current_level];
-            var data = {'feature': i.feature, 'path': i.restlet_path, 'name':n}
-            self.api.restlet.add(data,{202:function(r){alert(r)}})
+            var data = {'feature': i.feature, 'path': i.restlet_path, 'name': n}
+            self.api.restlet.add(data, {201: function (r) {
+                self.fire('reloadCurrentLevel',{'level':self.current_level});
+            }})
 
             //reload sidenav
             //select restlet
@@ -87,7 +131,7 @@
                 self = this;
             $('.methodButtons', $ctx).html('<button class="btn btn-small btn-success tcb tcb-addGet get"><i class="icon icon-plus"></i> GET</button><button class="btn btn-small btn-warning tcb tcb-addPut put"><i class="icon icon-plus"></i> PUT</button><button class="btn btn-small btn-info tcb tcb-addPost post"><i class="icon icon-plus"></i> POST</button><button class="btn btn-small btn-danger tcb tcb-addDelete delete"><i class="icon icon-plus"></i> DELETE</button>');
 
-            $(existingMethods).each(function (i,m) {
+            $(existingMethods).each(function (i, m) {
                 $('.' + existingMethods[i].method, $ctx).remove();
             })
 

@@ -109,49 +109,39 @@ if (is_file($targetfile)) {
 
     $sourcecode .= " */\n\n";
 
-    $sourcecode .= "// your code somewhere here \n\n";
+    $sourcecode .= <<<EOC
 
+
+try {
+   // Try something
+    \$data = ORM::for_table('TABLE')->find_one(\$this->values['identifier']);
+   if(!data){
+       throw new Exception('not found',404);
+   }
+
+   ZU::header(200);
+
+} catch (Exception \$e) {
+    switch(\$e->getCode()){
+        case 404:
+            ZU::header(404);
+            \$this->data['message'] = \$e->getMessage();
+            break;
+        default:
+            ZU::header(500);
+            \$this->data['message'] = \$e->getMessage();
+    }
+}
+
+
+
+EOC;
 
 
     foreach ($doc->parameter as $tmp) {
         $sourcecode .= "\$this->values['" . $tmp->name . "'];\n";
     }
-    $sourcecode .= "\n\n";
 
-    $sourcecode .= "\$this->data['message'] = \"dont forget the message\";\n";
-
-    $sourcecode .= "\n\n";
-
-    $sourcecode .= "\\PUT------------------------------------\n\n";
-    $sourcecode .= "try {\n
-        \n
-        \$DB = ORM::for_table('TABLE')->find_one(\$this->values['identifier']);\n
-        if (\$DB) {\n
-            \n
-            \$update_fields = \$this->values;\n
-        unset(\$update_fields['identifier']);\n
-
-        foreach(\$update_fields as \$key => \$value){\n
-            if(\$value != null){\n
-                \$DB->\$key = \$value;\n
-            }\n
-        }\n
-        \$DB->set('m_date',ZU_NOW);\n
-        \$DB->save();\n
-        \$this->data['message'] = \"record saved\";\n
-        ZU::header(202);\n
-        \n
-
-        } else {\n
-            throw new Exception('message');\n
-        }\n
-        ZU::header(202);\n
-\n
-    } catch (Exception \$e) {\n
-        ZU::header(404);\n
-        \$this->data['message'] = \$e->getMessage() ;\n
-    }\n\n";
-    $sourcecode .= "\\------------------------------------PUT\n\n";
 
     // Mimetypes
     foreach ($doc->mimetype as $tmp) {
@@ -182,7 +172,7 @@ if (is_file($targetfile)) {
     $sourcecode .= "   case \"xml\":\n";
     $sourcecode .= "     header('Content-type: application/xml');\n";
     $sourcecode .= "     ZU::load_class('lalit.array2xml', 'xml', true);\n";
-    $sourcecode .= "     \$xml = Array2XML::createXML('auth', \$this->data);\n";
+    $sourcecode .= "     \$xml = Array2XML::createXML('$feature', \$this->data);\n";
     $sourcecode .= "     \$this->contentbuffer = \$xml->saveXML();\n";
     $sourcecode .= "   break;\n";
     $sourcecode .= "}";
@@ -211,40 +201,4 @@ if (is_file($targetfile)) {
             break;
 
     }
-}
-
-
-function draw_modules($modules, $methods)
-{
-
-    line();
-    echo "| ";
-    echo str_pad("#", floor($GLOBALS['zeilenbreite'] * 0.07), " ") . " | ";
-    echo str_pad("Title", floor($GLOBALS['zeilenbreite'] * 0.4), " ") . " | ";
-    echo str_pad("Request", floor($GLOBALS['zeilenbreite'] * 0.45), " ") . " | ";
-    echo str_pad("Method", floor($GLOBALS['zeilenbreite'] * 0.08), " ") . " | \n";
-
-    line();
-
-
-    foreach ($modules as $index => $mod) {
-        echo "| ";
-        echo str_pad($index, floor($GLOBALS['zeilenbreite'] * 0.07), " ") . " | ";
-        echo str_pad($mod['title'], floor($GLOBALS['zeilenbreite'] * 0.4), " ") . " | ";
-        echo str_pad($mod['request'], floor($GLOBALS['zeilenbreite'] * 0.45), " ") . " | ";
-        echo str_pad($methods[$mod['method']], floor($GLOBALS['zeilenbreite'] * 0.08), " ") . " | \n";
-    }
-    line();
-
-
-}
-
-function line()
-{
-    echo "| ";
-    echo str_pad("", floor($GLOBALS['zeilenbreite'] * 0.07), "-") . " | ";
-    echo str_pad("", floor($GLOBALS['zeilenbreite'] * 0.4), "-") . " | ";
-    echo str_pad("", floor($GLOBALS['zeilenbreite'] * 0.45), "-") . " | ";
-    echo str_pad("", floor($GLOBALS['zeilenbreite'] * 0.08), "-") . " | \n";
-
 }
