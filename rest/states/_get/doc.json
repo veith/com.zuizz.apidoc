@@ -1,0 +1,23 @@
+{"title": "List States", "request": "\/api\/0\/com.zuizz.apidoc.features\/[feature].json", "method": "GET", "description": "List all installed features or get some basic details for a specified feature.",
+    "parameter": {
+
+
+    },
+    "states": {
+    "200": {
+        "code": 200,
+        "message": "OK",
+        "description": "content in response body"
+    }
+}, "permission": [
+    {
+        "role": "Developer",
+        "description": "Developer can see the list"
+    }
+], "mimetype": {
+    "json": {
+        "name": "json",
+        "response": "List of available system states",
+        "is_default": "true"
+    }
+}}

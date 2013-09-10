@@ -7,15 +7,17 @@
 }
 
 
-.modMethoddisplay .tcb-deleteParameter{
+.modMethoddisplay .tcb-deleteParameter, .modMethoddisplay .tcb-deleteMimetype{
     display: none;
 }
 
 
-.modMethoddisplay div.parameter:hover .tcb-deleteParameter{
+.modMethoddisplay div.parameter:hover .tcb-deleteParameter,.modMethoddisplay div.mimetype:hover .tcb-deleteMimetype{
     display: block;
 }
 
 .modMethoddisplay .well-inverse ,.modMethoddisplay .well-danger{
     margin-top: 25px;
 }
+
+

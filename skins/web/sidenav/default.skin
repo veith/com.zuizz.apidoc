@@ -34,14 +34,7 @@
                             {{=m.title}}</a></li>
                     {{~}}
                 </ul>
-                <div class="well-small">
-                <div class="btn-group">
-                    <a class="btn btn-mini btn-success"><i class="icon icon-plus"></i> GET</a>
-                    <a class="btn btn-mini btn-warning"><i class="icon icon-plus"></i> PUT</a>
-                    <a class="btn btn-mini btn-info"><i class="icon icon-plus"></i> POST</a>
-                    <a class="btn btn-mini btn-danger"><i class="icon icon-plus"></i> DELETE</a>
-                </div>
-                </div>
+
                 <hr>
 
                 {{?it.children}}
@@ -52,6 +45,7 @@
                     {{~}}
                 </ul>
                 {{?}}
+
             </div>
         </script>
         <script class="dot" type="text/text/x-dot-template" name="featuredetail">
@@ -67,9 +61,6 @@
                     {{~}}
                 </ul>
                 {{?}}
-            <div class="well-small">
-                <a class="btn btn-mini btn-info" title="Add a new restlet"><i class="icon-plus"></i></a>
-            </div>
             </div>
         </script>
     {/literal}

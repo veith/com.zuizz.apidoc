@@ -1,0 +1,6 @@
+div.modContextbuttons{
+
+}
+div.modContextbuttons .tcb-addRestlet, div.modContextbuttons .methodButtons {
+    display: none;
+}

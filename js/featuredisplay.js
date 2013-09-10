@@ -30,6 +30,7 @@
 
 
         },
+
         onFeatureSelected: function (d) {
             var $ctx = this.$ctx,
                 self = this;

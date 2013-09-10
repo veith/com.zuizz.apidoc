@@ -26,11 +26,20 @@
             self.initDot();
             self.autobutton();
             self.eventlistener();
+            self.setHeight();
             self.level = 0;
             self.restlet_data = []; //restlet data on level
             self.rest.features.list({200: function (d) {
                 self.renderFeature(d.features);
             }})
+
+
+        },
+        setHeight:function(){
+            var $ctx = this.$ctx,
+                self = this;
+
+            $ctx.css('height', document.height - $ctx.offset().top - 90);
 
         },
         eventlistener: function () {
@@ -89,7 +98,7 @@
             }
 
             self.level = self.level + 1;
-            self.fire('restletSelected', {'level': self.level, 'info': data.info});
+            self.fire('restletSelected', {'level': self.level, 'info': data.info,'methods':data.methods});
             $('.lvl', $ctx).slideUp();
             $('.lvl-' + self.level).delay(400).slideDown();
         },

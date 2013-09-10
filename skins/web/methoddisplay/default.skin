@@ -1,85 +1,142 @@
 <div class="{"methoddisplay"|Tc}" data-connectors="sidenav">
-    <div class="tabbable">
-        <ul class="nav nav-tabs" id="APIDOC" data-target="APDcontent">
-            <li class="active"><a id="APDtcGeneral" href="#APIDOCGeneral" data-toggle="tab"><i
-                            class="icon-file-text"></i> General</a></li>
-            <li><a id="APDtcParameter" href="#APIDOCParameter" data-toggle="tab"><i class="icon-file"></i>
-                    Parameters</a>
-            </li>
-            <li><a id="APDtcMimetypes" href="#APIDOCMimetypes" data-toggle="tab"><i class="icon-share"></i>
-                    Mimetypes</a>
-            </li>
-            <li><a id="APDtcStates" href="#APIDOCStates" data-toggle="tab"><i class="icon-random"></i> States</a></li>
-            <li><a id="APDtcPermissions" href="#APIDOCPermission" data-toggle="tab"><i class="icon-lock"></i>
-                    Permissions</a></li>
-            <li><a id="APDtcCacheing" href="#APIDOCCacheing" data-toggle="tab"><i class="icon-calendar"></i> Cache</a>
-            </li>
-            <li><a id="APDtcCode" href="#APIDOCCode" data-toggle="tab"><i class="icon-download"></i> Sources</a></li>
-        </ul>
+<div class="tabbable">
+<ul class="nav nav-tabs" id="APIDOC" data-target="APDcontent">
+    <li class="active"><a id="APDtcGeneral" href="#APIDOCGeneral" data-toggle="tab"><i
+                    class="icon-file-text"></i> General</a></li>
+    <li><a id="APDtcParameter" href="#APIDOCParameter" data-toggle="tab"><i class="icon-file"></i>
+            Parameters</a>
+    </li>
+    <li><a id="APDtcMimetypes" href="#APIDOCMimetype" data-toggle="tab"><i class="icon-share"></i>
+            Mimetypes</a>
+    </li>
+    <li><a id="APDtcStates" href="#APIDOCState" data-toggle="tab"><i class="icon-random"></i> States</a></li>
+    <li><a id="APDtcPermissions" href="#APIDOCPermission" data-toggle="tab"><i class="icon-lock"></i>
+            Permissions</a></li>
+    <li><a id="APDtcCacheing" href="#APIDOCCacheing" data-toggle="tab"><i class="icon-calendar"></i> Cache</a>
+    </li>
+    <li><a id="APDtcCode" href="#APIDOCCode" data-toggle="tab"><i class="icon-download"></i> Sources</a></li>
+</ul>
 
-        <div class="tab-content" id="APDcontent">
+<div class="tab-content" id="APDcontent">
 
-            <div class="tab-pane active" id="APIDOCGeneral">
-                <button class="btn btn-small btn-danger tcb tcb-saveGeneral pull-right">Save</button>
-                <h3 class="tc-general tc-general-title" contenteditable="true">Title</h3>
+<div class="tab-pane active" id="APIDOCGeneral">
+    <button class="btn btn-small btn-danger tcb tcb-saveGeneral pull-right">Save</button>
+    <h3 class="tc-general tc-general-title" contenteditable="true">Title</h3>
 
-                <div class="tc-general tc-general-description" contenteditable="true">Enter description</div>
-                <div class="segment-line">How to request</div>
-                <code class="tc-general tc-general-request" contenteditable="true">/api/0/com.zuizz.apidoc/features/com.zuizz.apidoc/restlets/features/methods/get.json</code>
 
-                <div class="segment-line">Info</div>
+    <div class="tc-general tc-general-description" contenteditable="true">Enter description</div>
+    <div class="segment-line">How to request</div>
+    <code class="tc-general tc-general-request" contenteditable="true">/api/0/com.zuizz.apidoc/features/com.zuizz.apidoc/restlets/features/methods/get.json</code>
 
-                <div class="row">
-                    <div class="col-md-2">
-                        <small class="light">Feature</small>
-                    </div>
-                    <div class="col-md-10 tc-info tc-info-feature"></div>
+    <div class="segment-line">Info</div>
+
+    <div class="row">
+        <div class="col-md-2">
+            <small class="light">Feature</small>
+        </div>
+        <div class="col-md-10 tc-info tc-info-feature"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <small class="light">Restlet</small>
+        </div>
+        <div class="col-md-10 tc-info tc-info-restlet"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <small class="light">Version</small>
+        </div>
+        <div class="col-md-10 tc-info tc-info-version"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <small class="light">Create Date</small>
+        </div>
+        <div class="col-md-10 tc-info tc-info-cdate"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <small class="light">Modified</small>
+        </div>
+        <div class="col-md-10 tc-info tc-info-mdate"></div>
+    </div>
+        <button class="btn btn-mini btn-warning tcb tcb-createNewVersion">Create new version</button>
+</div>
+
+<div class="tab-pane" id="APIDOCParameter">
+    <button class="btn btn-small btn-danger tcb tcb-saveParameters pull-right">Save</button>
+    <h3>Parameters</h3>
+
+    <div class="parameterlist">
+        There are no parameters for this method defined.
+    </div>
+
+    <h3>Add new parameter</h3>
+
+    <div class="segment-line tc-newParameter tc-newParameter-name" contenteditable="true">Name</div>
+    <button class="btn btn-small btn-primary tcb tcb-addParameter pull-right" data-parameter="new"><i
+                class="icon-plus"></i></button>
+    <div class="tc-newParameter tc-newParameter-description" contenteditable="true">Description</div>
+    <hr>
+    <div class="row">
+        <div class="col-md-2">Type</div>
+        <div class="col-md-10">
+            <select name="a" class="tc-newParameter tc-newParameter-type col-md-4">
+                <option value="0">numeric</option>
+                <option value="1">string</option>
+                <option value="2">int</option>
+                <option value="3">float</option>
+                <option value="4">email</option>
+                <option value="5">regularexpression</option>
+                <option value="6">url</option>
+                <option value="7">unsafe</option>
+                <option value="8">ip adress</option>
+                <option value="9">boolean</option>
+                <option value="10">array</option>
+            </select>
+        </div>
+    </div>
+    <div class="row rex rex-newParameter">
+        <div class="col-md-2">RegExp</div>
+        <div class="col-md-10"><input type="text"
+                                      class="tc-newParameter tc-newParameter-regularexpression col-md-6"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">Required</div>
+        <div class="col-md-10">
+            <select name="a" class="tc-newParameter tc-newParameter-required col-md-4" id="">
+                <option value="1">True</option>
+                <option value="0">False</option>
+
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">Default Value</div>
+        <div class="col-md-10"><input type="text" class="tc-newParameter tc-newParameter-default_value col-md-6">
+        </div>
+    </div>
+
+    <hr>
+
+    {literal}
+        <script class="dot" type="text/text/x-dot-template" name="parameters">
+            <div class="parameter well-inverse p{{=it.name}}">
+                <button class="btn btn-small btn-danger tcb tcb-deleteParameter pull-right"
+                        data-parameter="{{=it.name}}"><i class="icon-remove"></i></button>
+                <div class="segment-line tc-P{{=it.name}} tc-P{{=it.name}}-name">
+                    Parameter name
                 </div>
-                <div class="row">
-                    <div class="col-md-2">
-                        <small class="light">Restlet</small>
-                    </div>
-                    <div class="col-md-10 tc-info tc-info-restlet"></div>
-                </div>
-                <div class="row">
-                    <div class="col-md-2">
-                        <small class="light">Version</small>
-                    </div>
-                    <div class="col-md-10 tc-info tc-info-version"></div>
-                </div>
-                <div class="row">
-                    <div class="col-md-2">
-                        <small class="light">Create Date</small>
-                    </div>
-                    <div class="col-md-10 tc-info tc-info-cdate"></div>
-                </div>
-                <div class="row">
-                    <div class="col-md-2">
-                        <small class="light">Modified</small>
-                    </div>
-                    <div class="col-md-10 tc-info tc-info-mdate"></div>
-                </div>
 
-            </div>
-
-            <div class="tab-pane" id="APIDOCParameter">
-                <button class="btn btn-small btn-danger tcb tcb-saveParameters pull-right">Save</button>
-                <h3>Parameters</h3>
-
-                <div class="parameterlist">
-                    There are no parameters for this method defined.
+                <div class="tc-P{{=it.name}} tc-P{{=it.name}}-description" contenteditable="true">
+                    {{=it.description}}
                 </div>
-
-                <h3>Add new parameter</h3>
-                <div class="segment-line tc-new tc-new-name" contenteditable="true">Name</div>
-                <button class="btn btn-small btn-primary tcb tcb-addParameter pull-right" data-parameter="new"><i
-                            class="icon-plus"></i></button>
-                <div class="tc-new tc-new-description" contenteditable="true">Description</div>
                 <hr>
                 <div class="row">
                     <div class="col-md-2">Type</div>
                     <div class="col-md-10">
-                        <select name="a" class="tc-new tc-new-type col-md-4">
+                        <select name="a" class="tc-P{{=it.name}} tc-P{{=it.name}}-type col-md-4">
                             <option value="0">numeric</option>
                             <option value="1">string</option>
                             <option value="2">int</option>
@@ -94,16 +151,17 @@
                         </select>
                     </div>
                 </div>
-                <div class="row hide">
+                <div class="row rex rex-{{=it.name}}">
                     <div class="col-md-2">RegExp</div>
                     <div class="col-md-10"><input type="text"
-                                                  class="tc-new tc-new-regularexpression col-md-6"></div>
+                                                  class="tc-P{{=it.name}} tc-P{{=it.name}}-regularexpression col-md-6">
+                    </div>
                 </div>
 
                 <div class="row">
                     <div class="col-md-2">Required</div>
                     <div class="col-md-10">
-                        <select name="a" class="tc-new tc-new-required col-md-4" id="">
+                        <select name="a" class="tc-P{{=it.name}} tc-P{{=it.name}}-required col-md-4" id="">
                             <option value="1">True</option>
                             <option value="0">False</option>
 
@@ -112,92 +170,219 @@
                 </div>
                 <div class="row">
                     <div class="col-md-2">Default Value</div>
-                    <div class="col-md-10"><input type="text" class="tc-new tc-new-default_value col-md-6">
+                    <div class="col-md-10"><input type="text"
+                                                  class="tc-P{{=it.name}} tc-P{{=it.name}}-default_value col-md-6">
                     </div>
                 </div>
 
-                <hr>
-
-                {literal}
-                    <script class="dot" type="text/text/x-dot-template" name="parameters">
-                        <div class="parameter well-inverse p{{=it.name}}">
-                            <button class="btn btn-small btn-danger tcb tcb-deleteParameter pull-right"
-                                    data-parameter="{{=it.name}}"><i class="icon-remove"></i></button>
-                            <div class="segment-line tc-P{{=it.name}} tc-P{{=it.name}}-name">
-                                Parameter name
-                            </div>
-
-                            <div class="tc-P{{=it.name}} tc-P{{=it.name}}-description" contenteditable="true">
-                                {{=it.description}}
-                            </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-md-2">Type</div>
-                                <div class="col-md-10">
-                                    <select name="a" class="tc-P{{=it.name}} tc-P{{=it.name}}-type col-md-4">
-                                        <option value="0">numeric</option>
-                                        <option value="1">string</option>
-                                        <option value="2">int</option>
-                                        <option value="3">float</option>
-                                        <option value="4">email</option>
-                                        <option value="5">regularexpression</option>
-                                        <option value="6">url</option>
-                                        <option value="7">unsafe</option>
-                                        <option value="8">ip adress</option>
-                                        <option value="9">boolean</option>
-                                        <option value="10">array</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="row rex rex-{{=it.name}}">
-                                <div class="col-md-2">RegExp</div>
-                                <div class="col-md-10"><input type="text"
-                                                              class="tc-P{{=it.name}} tc-P{{=it.name}}-regularexpression col-md-6">
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-2">Required</div>
-                                <div class="col-md-10">
-                                    <select name="a" class="tc-P{{=it.name}} tc-P{{=it.name}}-required col-md-4" id="">
-                                        <option value="1">True</option>
-                                        <option value="0">False</option>
-
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-2">Default Value</div>
-                                <div class="col-md-10"><input type="text"
-                                                              class="tc-P{{=it.name}} tc-P{{=it.name}}-default_value col-md-6">
-                                </div>
-                            </div>
-
-                        </div>
-                    </script>
-                {/literal}
             </div>
+        </script>
+    {/literal}
+</div>
+<div class="tab-pane" id="APIDOCMimetype">
+    <button class="btn btn-small btn-danger tcb tcb-saveMimetypes pull-right">Save</button>
+    <h3>Mimetypes</h3>
 
-            <div class="tab-pane" id="APIDOCMimetypes">
-                MimetypedefaultDescription
-            </div>
+    <div class="mimetypelist">
+        There are no mimetypes for this method defined.
+    </div>
 
-            <div class="tab-pane" id="APIDOCStates">
-                StateMessageDescription
-            </div>
+    <h3>Add new mimetype</h3>
+    <button class="btn btn-small btn-primary tcb tcb-addMimetype pull-right" data-mimetype="new"><i
+                class="icon-plus"></i></button>
 
-            <div class="tab-pane" id="APIDOCPermission">
-                RoleDescription / Reason
-            </div>
+    <div class="segment-line tc-newMimetype tc-newMimetype-name" contenteditable="true">Name</div>
 
-            <div class="tab-pane" id="APIDOCCacheing">
-                Not implemented yet.
-            </div>
+    <div class="row">
+        <div class="col-md-2">Default</div>
+        <div class="col-md-10">
 
-            <div class="tab-pane" id="APIDOCCode">
-                php,zujs,ajax,...
-            </div>
+            <label class="col-md-4"><input type="radio" class="tc-newMimetype tc-newMimetype-is_default col-md-4"
+                                           name="tc-newM-is_default" value="true"> Yes</label>
+            <label class="col-md-4"><input type="radio" class="tc-newMimetype tc-newMimetype-is_default col-md-4"
+                                           name="tc-newM-is_default" value="false" checked="checked"> No</label>
 
         </div>
     </div>
+
+    <hr>
+    <pre class="tc-newMimetype tc-newMimetype-response code"
+         contenteditable="true">Response description or Example...</pre>
+
+    <hr>
+
+    {literal}
+        <script class="dot" type="text/text/x-dot-template" name="mimetypes">
+            <div class="mimetype well-inverse p{{=it.name}}">
+                <button class="btn btn-small btn-danger tcb tcb-deleteMimetype pull-right"
+                        data-mimetype="{{=it.name}}"><i class="icon-remove"></i></button>
+                <div class="segment-line tc-M{{=it.name}} tc-M{{=it.name}}-name">
+                    Mimetype name
+                </div>
+                <div class="row">
+                    <div class="col-md-2">Default</div>
+                    <div class="col-md-10">
+                        <label><input type="radio" class="tc-M{{=it.name}} tc-M{{=it.name}}-is_default col-md-6"
+                                      name="tc-M{{=it.name}}-default" value="true"> Yes</label>
+                        <label><input type="radio" class="tc-M{{=it.name}} tc-M{{=it.name}}-is_default col-md-6"
+                                      name="tc-M{{=it.name}}-default" value="false"> No</label>
+                    </div>
+                </div>
+
+                            <pre class="tc-M{{=it.name}} tc-M{{=it.name}}-response code" contenteditable="true">
+                                {{=it.response}}
+                            </pre>
+                <hr>
+
+
+            </div>
+        </script>
+    {/literal}
 </div>
+
+
+<div class="tab-pane" id="APIDOCState">
+    <button class="btn btn-small btn-danger tcb tcb-saveStates pull-right">Save</button>
+    <h3>States</h3>
+
+    <div class="statelist">
+        There are no states for this method defined.
+    </div>
+    <button class="btn btn-small btn-primary tcb tcb-addState pull-right" data-state="new"><i
+                class="icon-plus"></i></button>
+    <h3>Add new state</h3>
+
+
+    <div class="row">
+        <div class="col-md-2">State</div>
+        <div class="col-md-10">
+            <select class="tc-newState tc-newState-code col-md-5">
+                <option value="100">100 : Continue</option>
+                <option value="101">101 : Switching Protocols</option>
+                <option value="102">102 : Processing</option>
+                <option value="118">118 : Connection timed out</option>
+                <option value="200">200 : Ok</option>
+                <option value="201">201 : Created</option>
+                <option value="202">202 : Accepted</option>
+                <option value="203">203 : Non-Authoritative Information</option>
+                <option value="204">204 : No Content</option>
+                <option value="300">300 : Multiple Choices</option>
+                <option value="301">301 : Moved Permanently</option>
+                <option value="303">303 : See Other</option>
+                <option value="304">304 : Not Modified</option>
+                <option value="305">305 : Use Proxy</option>
+                <option value="307">307 : Temporary Redirect</option>
+                <option value="400">400 : Bad Request</option>
+                <option value="401">401 : Unauthorized</option>
+                <option value="402">402 : Payment Required</option>
+                <option value="403">403 : Forbidden</option>
+                <option value="404">404 : Not Found</option>
+                <option value="405">405 : Method Not Allowed</option>
+                <option value="418">418 : I'm a teapot</option>
+                <option value="422">422 : Unprocessable Entity</option>
+                <option value="500">500 : Internal Server Error</option>
+                <option value="501">501 : Not Implemented</option>
+                <option value="502">502 : Bad Gateway</option>
+                <option value="503">503 : Service Unavailable</option>
+                <option value="504">504 : Gateway Time-out</option>
+                <option value="505">505 : HTTP Version not supported</option>
+                <option value="506">506 : Variant Also Negotiates</option>
+                <option value="507">507 : Insufficient Storage</option>
+                <option value="509">509 : Bandwidth Limit Exceeded</option>
+                <option value="510">510 : Not Extended</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">Message</div>
+        <div class="col-md-10">
+            <input type="text" class="tc-newState tc-newState-message code" contenteditable="true">
+        </div>
+    </div>
+    <hr>
+    <div class="tc-newState tc-newState-description code" contenteditable="true">Response description or Example...</div>
+    <hr>
+
+
+
+    {literal}
+        <script class="dot" type="text/text/x-dot-template" name="states">
+            <div class="state well-inverse p{{=it.code}}">
+                <button class="btn btn-small btn-danger tcb tcb-deleteState pull-right"
+                        data-state="{{=it.code}}"><i class="icon-remove"></i></button>
+                <div class="segment-line">
+                    <span class="tc-S{{=it.code}} tc-S{{=it.code}}-code">State Number</span> : <span class="tc-S{{=it.code}} tc-S{{=it.code}}-message">State Number</span>
+                </div>
+
+                <div class="tc-S{{=it.code}} tc-S{{=it.code}}-description" contenteditable="true">
+                    {{=it.description}}
+                </div>
+                <hr>
+                 
+
+
+            </div>
+        </script>
+    {/literal}
+</div>
+
+<div class="tab-pane" id="APIDOCPermission">
+    <button class="btn btn-small btn-danger tcb tcb-savePermissions pull-right">Save</button>
+    <h3>Permissions</h3>
+
+    <div class="permissionlist">
+        There are no permissions for this method defined.
+    </div>
+    <button class="btn btn-small btn-primary tcb tcb-addPermission pull-right" data-permission="new"><i
+                class="icon-plus"></i></button>
+    <h3>Add new permission</h3>
+
+
+
+
+    <div class="row">
+        <div class="col-md-2">Role</div>
+        <div class="col-md-10">
+            <input type="text" class="tc-newPermission tc-newPermission-role">
+        </div>
+    </div>
+    <hr>
+    <div class="tc-newPermission tc-newPermission-description" contenteditable="true">Response description or Example...</div>
+    <hr>
+
+
+    {literal}
+        <script class="dot" type="text/text/x-dot-template" name="permissions">
+            <div class="permission well-inverse p{{=it.role}}">
+                <button class="btn btn-small btn-danger tcb tcb-deletePermission pull-right"
+                        data-permission="{{=it.role}}"><i class="icon-remove"></i></button>
+                <div class="segment-line tc-PM{{=it.role}} tc-PM{{=it.role}}-role">
+                    Role
+                </div>
+
+                <div class="tc-PM{{=it.role}} tc-PM{{=it.role}}-description" contenteditable="true">
+                    {{=it.description}}
+                </div>
+                <hr>
+
+
+
+            </div>
+        </script>
+    {/literal}
+</div>
+
+
+<div class="tab-pane" id="APIDOCCacheing">
+    Not implemented yet.
+</div>
+
+<div class="tab-pane" id="APIDOCCode">
+    php,zujs,ajax,...
+</div>
+
+</div>
+</div>
+</div>
+
+

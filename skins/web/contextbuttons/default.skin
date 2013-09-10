@@ -1,0 +1,17 @@
+<div class="{"contextbuttons"|Tc}" data-connectors="sidenav">
+
+
+    <div class="btn-group methodButtons">
+        <button class="btn btn-small btn-success tcb tcb-addGet get"><i class="icon icon-plus"></i> GET</button>
+        <button class="btn btn-small btn-warning tcb tcb-addPut put"><i class="icon icon-plus"></i> PUT</button>
+        <button class="btn btn-small btn-info tcb tcb-addPost post"><i class="icon icon-plus"></i> POST</button>
+        <button class="btn btn-small btn-danger tcb tcb-addDelete delete"><i class="icon icon-plus"></i> DELETE</button>
+    </div>
+
+    <br clear="all">
+
+         <button class="btn btn-small btn-default tcb tcb-addRestlet" title="Add a new restlet"><i class="icon-plus"></i>
+            Add Restlet
+        </button>
+
+</div>

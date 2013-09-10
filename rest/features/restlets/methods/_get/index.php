@@ -63,6 +63,11 @@ if($REST->expand_requested('expands') && isset($doc['expands'])){
 }
 
 if($REST->expand_requested('permissions') && isset($doc['permission'])){
+    $ptemp = $doc['permission'];
+    $doc['permission'] = array();
+    foreach($ptemp as $role){
+        $doc['permission'][$role['role']] = $role;
+    }
     $this->data['permissions'] = $doc['permission'];
 }
 

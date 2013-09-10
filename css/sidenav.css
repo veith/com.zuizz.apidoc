@@ -1,5 +1,6 @@
 div.modSidenav {
     position: relative;
+    overflow: scroll;
 }
 
 div.modSidenav .lvl {
@@ -10,13 +11,28 @@ div.modSidenav li.get a {
      border-left-color: #5cb85c;
 }
 
+div.modSidenav ul.nav-list li.get.active a:hover {
+     border-left-color: #00b85c;
+}
+
 div.modSidenav li.delete a {
      border-left-color: #d9534f;
+}
+div.modSidenav ul.nav-list li.delete.active a:hover {
+     border-left-color: #d95300;
 }
 
 div.modSidenav li.put a {
      border-left-color: #f0ad4e;
 }
+div.modSidenav ul.nav-list li.put.active a:hover {
+    border-left-color: #fea248;
+}
+
 div.modSidenav li.post a {
      border-left-color: #5bc0de;
+}
+
+div.modSidenav ul.nav-list li.post.active a:hover {
+    border-left-color: #00c0de;
 }

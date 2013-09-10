@@ -8,7 +8,7 @@ try {
 
     $varr = explode(".", $this->identifiers['restlets']);
     $feature = $this->identifiers['features'];
-    $meth = explode('.',  $this->identifiers['methods']);
+    $meth = explode('.', $this->identifiers['methods']);
     if (isset($meth[1])) {
         $version = $meth[1];
     } else {
@@ -30,29 +30,42 @@ try {
     $finf = stat($file);
 
 
-    $doc = json_decode(file_get_contents($file),true);
+    $doc = json_decode(file_get_contents($file), true);
 
 
 // objekt aktualisieren
 
+    $doc['parameter'][$this->identifier]['name'] = $this->identifier;
 
     if ($this->values['description'] != null) {
-
         $doc['parameter'][$this->identifier]['description'] = $this->values['description'];
     }
     if ($this->values['required'] != null) {
         $doc['parameter'][$this->identifier]['required'] = $this->values['required'];
     }
 
+    if ($this->values['type'] != null) {
+        $doc['parameter'][$this->identifier]['type'] = $this->values['type'];
+    }
+
     if ($this->values['default_value'] != null) {
         $doc['parameter'][$this->identifier]['default_value'] = $this->values['default_value'];
+    } else {
+        if (!isset($doc['parameter'][$this->identifier]['default_value'])) {
+            $doc['parameter'][$this->identifier]['default_value'] = "";
+        }
+
     }
 
     if ($this->values['regularexpression'] != null) {
         $doc['parameter'][$this->identifier]['regularexpression'] = $this->values['regularexpression'];
+    } else {
+        if (!isset($doc['parameter'][$this->identifier]['regularexpression'])) {
+            $doc['parameter'][$this->identifier]['regularexpression'] = "";
+        }
     }
 
-
+    $this->data = $doc['parameter'][$this->identifier];
 
 // json sichern
     file_put_contents($file, json_encode($doc));
@@ -62,9 +75,6 @@ try {
     ZU::header(404);
     $this->data['message'] = $e->getMessage();
 }
-
-
-
 
 
 switch ($this->mimetype) {
