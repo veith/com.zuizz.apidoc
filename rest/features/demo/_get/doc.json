@@ -1,13 +1,4 @@
-{"title": "",
-    "request": "", "method": "", "description": "Please describe the restlet", "parameter": {
-    "identifier": {
-        "description": "Identifier field",
-        "name": "identifier",
-        "type": "1",
-        "required": 0,
-        "default_value": "",
-        "regularexpression": ""
-    },
+{"title": "sdf", "request": "sdf",   "description": "Please describe the restlet", "parameter": {
     "identifiers": {
         "description": "Array with all identifiers in path",
         "name": "identifiers",
@@ -84,11 +75,6 @@
         "message": "No Content"
     },
     "404": {
-        "code": 400,
-        "message": "Bad Request",
-        "description": "Required fieds missing"
-    },
-    "404": {
         "code": 404,
         "message": "Nicht vorhanden",
         "description": "Objekt mit Identifier nicht gefunden oder nicht vorhanden"
@@ -111,7 +97,11 @@
 }, "permission": [
     {
         "role": "User",
-        "description": "Authentifizierte Benutzer können..."
+        "description": "Authentifizierte Benutzer k\u00f6nnen..."
+    },
+    {
+        "role": "Developer",
+        "description": "Authentifizierte Benutzer k\u00f6nnen..."
     },
     {
         "role": "Administrator",

@@ -30,7 +30,7 @@
             self.method = '';
 
             self.rest.stateheaders = new Tc.zu.rest('/api/0/com.zuizz.apidoc/states/');
-            self.rest.stateheaders.list({200:function(r){
+            self.rest.stateheaders.list({200: function (r) {
                 self.stateheaders = r;
 
             }})
@@ -63,12 +63,22 @@
             }})
 
 
-        },render: function (data) {
+        }, render: function (data) {
             var $ctx = this.$ctx,
                 self = this;
             //console.dir(data)
             data.method = self.method;
-
+            // display fields and expand tab for get
+            if (data.info.method == 'get') {
+                $('#APDtcExpands').show();
+                $('#APDtcFields').show();
+            } else {
+                if ($('#APIDOCExpands').hasClass('active') || $('#APIDOCFields').hasClass('active')) {
+                    $('#APDtcParameter').tab('show');
+                }
+                $('#APDtcExpands').hide();
+                $('#APDtcFields').hide();
+            }
 
             // General
             var general = {'description': data.description, 'title': data.title, 'request': data.request}
@@ -87,6 +97,7 @@
             this.renderMimetypes(self, $ctx, self.mimetypes);
             this.renderStates(self, $ctx, self.states);
             this.renderPermissions(self, $ctx, self.permissions);
+
 
             $('#display .mod').hide();
             $ctx.show();
@@ -136,7 +147,7 @@
 
                 };
             }
-        }, 
+        },
         renderMimetypes: function (self, $ctx, mimetypes) {
             // mimetype with dot and bind
             self.bind.mimetypes = {};
@@ -185,9 +196,9 @@
                     $('.newState', $ctx).removeClass('well-inverse').addClass('well-danger');
 
                 };
-                self.bind.states['newState'].fields['code'] = {'onChange':function(k,v){
+                self.bind.states['newState'].fields['code'] = {'onChange': function (k, v) {
 
-                    self.bind.states['newState'].set('message',self.stateheaders[v]);
+                    self.bind.states['newState'].set('message', self.stateheaders[v]);
                 }};
 
             }
@@ -220,7 +231,7 @@
 
                 };
             }
-        }, 
+        },
         'tcb-saveGeneral': function (btn) {
             var $ctx = this.$ctx,
                 self = this;
@@ -237,10 +248,10 @@
                 self = this;
             var rst = new Tc.zu.rest(self.method.href + '.' + self.bind.info.get('version') + '/parameters/');
             rst.destroy($(btn).data('parameter'),
-             {202: function () {
-               delete(self.parameters[$(btn).data('parameter')]);
-                self.renderParameters(self, $ctx, self.parameters);
-            }});
+                {202: function () {
+                    delete(self.parameters[$(btn).data('parameter')]);
+                    self.renderParameters(self, $ctx, self.parameters);
+                }});
 
         },
         'tcb-saveParameters': function (btn) {
@@ -290,10 +301,10 @@
                 self = this;
             var rst = new Tc.zu.rest(self.method.href + '.' + self.bind.info.get('version') + '/permissions/');
             rst.destroy($(btn).data('permission'),
-             {202: function () {
-               delete(self.permissions[$(btn).data('permission')]);
-                self.renderPermissions(self, $ctx, self.permissions);
-            }});
+                {202: function () {
+                    delete(self.permissions[$(btn).data('permission')]);
+                    self.renderPermissions(self, $ctx, self.permissions);
+                }});
 
         },
         'tcb-savePermissions': function (btn) {
@@ -343,10 +354,10 @@
                 self = this;
             var rst = new Tc.zu.rest(self.method.href + '.' + self.bind.info.get('version') + '/states/');
             rst.destroy($(btn).data('state'),
-             {202: function () {
-               delete(self.states[$(btn).data('state')]);
-                self.renderStates(self, $ctx, self.states);
-            }});
+                {202: function () {
+                    delete(self.states[$(btn).data('state')]);
+                    self.renderStates(self, $ctx, self.states);
+                }});
 
         },
         'tcb-saveStates': function (btn) {
@@ -397,10 +408,10 @@
                 self = this;
             var rst = new Tc.zu.rest(self.method.href + '.' + self.bind.info.get('version') + '/mimetypes/');
             rst.destroy($(btn).data('mimetype'),
-             {202: function () {
-               delete(self.mimetypes[$(btn).data('mimetype')]);
-                self.renderMimetypes(self, $ctx, self.mimetypes);
-            }});
+                {202: function () {
+                    delete(self.mimetypes[$(btn).data('mimetype')]);
+                    self.renderMimetypes(self, $ctx, self.mimetypes);
+                }});
 
         },
         'tcb-saveMimetypes': function (btn) {

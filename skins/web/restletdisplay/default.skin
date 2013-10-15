@@ -38,6 +38,8 @@
         <button class="btn btn-default disabled"><i class="icon icon-plus"></i> HEAD</button>
         <button class="btn btn-default disabled"><i class="icon icon-plus"></i> TRACE</button>
         <button class="btn btn-default disabled"><i class="icon icon-plus"></i> OPTIONS</button>
+        <button class="btn btn-default disabled"><i class="icon icon-plus"></i> CONNECT</button>
+        <button class="btn btn-default disabled"><i class="icon icon-plus"></i> PATCH</button>
     </div>
 
 

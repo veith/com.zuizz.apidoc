@@ -6,8 +6,8 @@
     <li><a id="APDtcParameter" href="#APIDOCParameter" data-toggle="tab"><i class="icon-file"></i>
             Query Parameters</a>
     </li>
-    <li><a id="restletFields" href="#APIDOCFields" data-toggle="tab"><i class="icon-file"></i>Fields</a></li>
-    <li><a id="restletExpands" href="#APIDOCExpands" data-toggle="tab"><i class="icon-share"></i>Expands</a></li>
+    <li><a id="APDtcFields" href="#APIDOCFields" data-toggle="tab"><i class="icon-file"></i> Fields</a></li>
+    <li><a id="APDtcExpands" href="#APIDOCExpands" data-toggle="tab"><i class="icon-share"></i> Expands</a></li>
     <li><a id="APDtcMimetypes" href="#APIDOCMimetype" data-toggle="tab"><i class="icon-share"></i>
             Mimetypes</a>
     </li>
