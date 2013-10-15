@@ -17,13 +17,13 @@
         </script>
         <script class="dot" type="text/text/x-dot-template" name="restletlist">
             <div class="restletlist lvl lvl-{{=it.level}}">
-                <div class="segment-line">About <a class="btn btn-small btn-info pull-right tcb tcb-back" data-level="{{=it.level}}"><i
+                <div class="segment-line">{{=it.info.restlet}} <a class="btn btn-small btn-info pull-right tcb tcb-back" data-level="{{=it.level}}"><i
                                 class="icon icon-arrow-left"></i> </a></div>
 
 
 
                 <small class="light">Feature</small> {{=it.info.feature}}<br>
-                <small class="light">Restlet</small> {{=it.info.restlet}}
+
 
 
                 <div class="segment-line">Methods</div>

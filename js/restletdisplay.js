@@ -7,6 +7,7 @@
      */
     Tc.Module.Restletdisplay = Tc.Module.extend({
 
+
         /**
          * Initializes the Default module.
          *
@@ -18,49 +19,124 @@
          */
         init: function ($ctx, sandbox, modId) {
             var self = this;
-
+            self.restlet_data = {}; // store level based information
+            self.current_level = 0;
             // call base constructor
             this._super($ctx, sandbox, modId);
-            self.rest = {};
-            self.init_restlet_api();
-            self.initDot();
             self.autobutton();
 
-            self.restlet = '';
+            self.api = {};
 
-
+            self.api.method = new Tc.zu.rest('/api/0/com.zuizz.apidoc.features.restlets.methods/');
+            self.initDot();
+            self.allButtons = $('.methodButtons', $ctx).html();
         },
+
         onRestletSelected: function (d) {
             var $ctx = this.$ctx,
                 self = this;
+            self.restlet_data[d.level] = d.info;
+            self.restlet_data[d.level].methods = d.methods;
+            self.showAddRestletAndMethods(self.restlet_data[d.level].methods);
+            self.current_level = d.level;
 
             self.restlet = d.info.restlet;
             self.loadData(self.restlet);
-        },
 
-        loadData: function (restlet) {
+            $('#display .mod').hide();
+            $ctx.show();
+        },
+        onRestletNodeSelected: function (d) {
             var $ctx = this.$ctx,
                 self = this;
-            self.rest.restlets.get(restlet, {200: function (d) {
-                self.render(d);
+            self.showAddRestletAndMethods(self.restlet_data[d.level].methods);
+            self.current_level = d.level;
+
+            self.loadData(self.restlet_data[d.level].restlet);
+            $('#display .mod').hide();
+            $ctx.show();
+
+        },
+        'tcb-addGet': function (button) {
+            var $ctx = this.$ctx,
+                self = this;
+            var i = self.restlet_data[self.current_level];
+            var data = {'feature': i.feature, 'path': i.restlet_path, 'method': 'get'}
+            self.api.method.add(data, {201: function (r) {
+                self.fire('reloadCurrentLevel',{'level':self.current_level});
             }})
 
+        },
+        'tcb-addPut': function (button) {
+            var $ctx = this.$ctx,
+                self = this;
+            var i = self.restlet_data[self.current_level];
+            var data = {'feature': i.feature, 'path': i.restlet_path, 'method': 'put'}
+            self.api.method.add(data, {201: function (r) {
+                self.fire('reloadCurrentLevel',{'level':self.current_level});
+            }})
+
+        }, 'tcb-addPost': function (button) {
+            var $ctx = this.$ctx,
+                self = this;
+            var i = self.restlet_data[self.current_level];
+            var data = {'feature': i.feature, 'path': i.restlet_path, 'method': 'post'}
+            self.api.method.add(data, {201: function (r) {
+
+                self.fire('reloadCurrentLevel',{'level':self.current_level});
+            }})
+
+        }, 'tcb-addDelete': function (button) {
+            var $ctx = this.$ctx,
+                self = this;
+
+            var i = self.restlet_data[self.current_level];
+            var data = {'feature': i.feature, 'path': i.restlet_path, 'method': 'delete'}
+            self.api.method.add(data, {201: function (r) {
+
+                self.fire('reloadCurrentLevel',{'level':self.current_level});
+            }})
 
         },
 
-        render: function (data) {
+        'tcb-addRestlet': function (button) {
             var $ctx = this.$ctx,
                 self = this;
-            data.restlet = self.restlet;
-            $ctx.html(self.dot.restlet(data));
-            $('#display .mod').hide();
-            $ctx.show();
+            var n = prompt('Please enter the name of the restlet');
+
+            //Post data
+
+            var i = self.restlet_data[self.current_level];
+            var data = {'feature': i.feature, 'path': i.restlet_path, 'name': n}
+            self.api.restlet.add(data, {201: function (r) {
+                self.fire('reloadCurrentLevel',{'level':self.current_level});
+            }})
+
+            //reload sidenav
+            //select restlet
+
         },
-        onRestletNodeSelected:function(d){
+        showAddRestlet: function () {
             var $ctx = this.$ctx,
                 self = this;
-            $('#display .mod').hide();
-            $ctx.show();
+            // hide method button
+            $('.methodButtons', $ctx).hide();
+            // show restlet button
+            $('.tcb-addRestlet', $ctx).show();
+        },
+        showAddRestletAndMethods: function (existingMethods) {
+            var $ctx = this.$ctx,
+                self = this;
+            $('.methodButtons', $ctx).html(self.allButtons);
+
+            $(existingMethods).each(function (i, m) {
+                $('.' + existingMethods[i].method, $ctx).remove();
+            })
+
+            // hide restlet buttons
+            $('.tcb-addRestlet', $ctx).show();
+            // show method button
+            $('.methodButtons', $ctx).show();
         },
         /**
          * Hook function to do all of your module stuff.
@@ -84,20 +160,28 @@
             var $ctx = this.$ctx,
                 self = this;
         },
-        init_restlet_api: function () {
+
+        loadData: function (restlet) {
             var $ctx = this.$ctx,
                 self = this;
-            //bind to ressource restlets
-            self.rest.restlets = new Tc.zu.rest('/api/0/com.zuizz.apidoc/features/com.zuizz.apidoc/restlets/');
+            self.api.restlet = new Tc.zu.rest('/api/0/com.zuizz.apidoc/features/' + self.restlet_data[self.current_level]['feature'] + '/restlets/');
+            self.api.restlet.get(restlet, {200: function (d) {
+                d.restlet = restlet;
+                self.render(d);
+            }})
 
-            //define fields
-            self.rest.restlets.defineFields('*');
 
-            //define expands
-            self.rest.restlets.defineExpands('');
+        },
 
-            //set mimetype
-            //mimetype is json per default
+
+        render: function (data) {
+            var $ctx = this.$ctx,
+                self = this;
+
+
+            $('#APIDOCInfo',$ctx).html(self.dot.restlet(data));
+
         }
+
     });
 })(Tc.$);

@@ -49,55 +49,15 @@
             var $ctx = this.$ctx,
                 self = this;
             self.restlet_data[d.level] = d.info;
-            self.restlet_data[d.level].methods = d.methods;
-            self.showAddRestletAndMethods(self.restlet_data[d.level].methods);
             self.current_level = d.level;
+
         },
         onRestletNodeSelected: function (d) {
             var $ctx = this.$ctx,
                 self = this;
-            self.showAddRestletAndMethods(self.restlet_data[d.level].methods);
             self.current_level = d.level;
-        },
-        'tcb-addGet': function (button) {
-            var $ctx = this.$ctx,
-                self = this;
-            var i = self.restlet_data[self.current_level];
-            var data = {'feature': i.feature, 'path': i.restlet_path, 'method': 'get'}
-            self.api.method.add(data, {201: function (r) {
-                self.fire('reloadCurrentLevel',{'level':self.current_level});
-            }})
 
-        },
-        'tcb-addPut': function (button) {
-            var $ctx = this.$ctx,
-                self = this;
-            var i = self.restlet_data[self.current_level];
-            var data = {'feature': i.feature, 'path': i.restlet_path, 'method': 'put'}
-            self.api.method.add(data, {201: function (r) {
-               self.fire('reloadCurrentLevel',{'level':self.current_level});
-            }})
 
-        }, 'tcb-addPost': function (button) {
-            var $ctx = this.$ctx,
-                self = this;
-            var i = self.restlet_data[self.current_level];
-            var data = {'feature': i.feature, 'path': i.restlet_path, 'method': 'post'}
-            self.api.method.add(data, {201: function (r) {
-
-                self.fire('reloadCurrentLevel',{'level':self.current_level});
-            }})
-
-        }, 'tcb-addDelete': function (button) {
-            var $ctx = this.$ctx,
-                self = this;
-
-            var i = self.restlet_data[self.current_level];
-            var data = {'feature': i.feature, 'path': i.restlet_path, 'method': 'delete'}
-            self.api.method.add(data, {201: function (r) {
-
-                self.fire('reloadCurrentLevel',{'level':self.current_level});
-            }})
 
         },
 
@@ -125,20 +85,6 @@
             $('.methodButtons', $ctx).hide();
             // show restlet button
             $('.tcb-addRestlet', $ctx).show();
-        },
-        showAddRestletAndMethods: function (existingMethods) {
-            var $ctx = this.$ctx,
-                self = this;
-            $('.methodButtons', $ctx).html('<button class="btn btn-small btn-success tcb tcb-addGet get"><i class="icon icon-plus"></i> GET</button><button class="btn btn-small btn-warning tcb tcb-addPut put"><i class="icon icon-plus"></i> PUT</button><button class="btn btn-small btn-info tcb tcb-addPost post"><i class="icon icon-plus"></i> POST</button><button class="btn btn-small btn-danger tcb tcb-addDelete delete"><i class="icon icon-plus"></i> DELETE</button>');
-
-            $(existingMethods).each(function (i, m) {
-                $('.' + existingMethods[i].method, $ctx).remove();
-            })
-
-            // hide restlet buttons
-            $('.tcb-addRestlet', $ctx).show();
-            // show method button
-            $('.methodButtons', $ctx).show();
         },
         /**
          * Hook function to do all of your module stuff.

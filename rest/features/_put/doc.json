@@ -1,0 +1,67 @@
+{"title":"",
+    "request":"", "method":"", "description":"Please describe the restlet", "parameter":{
+    "identifier":{
+        "description":"Identifier field",
+        "name":"identifier",
+        "type":"0",
+        "required":0,
+        "default_value":"",
+        "regularexpression":""
+    },"title":{
+        "description":"Titel",
+        "name":"title",
+        "type":"1",
+        "required":0,
+        "default_value":"",
+        "regularexpression":""
+    }
+
+
+}, "states":{
+
+
+    "202":{
+        "code":"202",
+        "message":"OK",
+        "description":"Objekt wurde aktualisiert.\r\nAllf\u00e4llige Details sind im response body."
+    },
+    "404": {
+        "code": 400,
+        "message": "Bad Request",
+        "description": "Required fieds missing"
+    },
+    "404": {
+        "code": 404,
+        "message": "Nicht vorhanden",
+        "description": "Objekt mit Identifier nicht gefunden oder nicht vorhanden"
+    },"405": {
+        "code": 405,
+        "message": "Pflichtfelder fehlen",
+        "description": "Die Daten konnten nicht verarbeitet werden. Allf\u00e4llige Detail sind im response body."
+    },
+    "422": {
+        "code": 422,
+        "message": "Unprocessable Entity",
+        "description": "Type mismatch, some fields are not sent as excepted. Please check the documentation"
+    },
+    "500": {
+        "code": 500,
+        "message": "Internal Server Error",
+        "description": "Internal Server Error"
+    }
+}, "permission":[
+    {
+        "role":"User",
+        "description":"Authentifizierte Benutzer k\u00f6nnen..."
+    },
+    {
+        "role": "Administrator",
+        "description": "Rolle Administrator kann..."
+    }
+], "mimetype":{
+    "json":{
+        "name":"json",
+        "is_default":true,
+        "response":"Details zum Vorgang als json Objekt."
+    }
+}}

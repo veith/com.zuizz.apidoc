@@ -81,6 +81,7 @@
             var $ctx = this.$ctx,
                 self = this;
             self.current_level = d.level ;
+            --self.level;
             self.rest.restlets.list({200: function (d) {
                 self.restlet_data[self.level] = d;
                 if(  self.current_level == 1){

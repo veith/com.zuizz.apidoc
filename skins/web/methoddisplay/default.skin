@@ -4,8 +4,10 @@
     <li class="active"><a id="APDtcGeneral" href="#APIDOCGeneral" data-toggle="tab"><i
                     class="icon-file-text"></i> General</a></li>
     <li><a id="APDtcParameter" href="#APIDOCParameter" data-toggle="tab"><i class="icon-file"></i>
-            Parameters</a>
+            Query Parameters</a>
     </li>
+    <li><a id="restletFields" href="#APIDOCFields" data-toggle="tab"><i class="icon-file"></i>Fields</a></li>
+    <li><a id="restletExpands" href="#APIDOCExpands" data-toggle="tab"><i class="icon-share"></i>Expands</a></li>
     <li><a id="APDtcMimetypes" href="#APIDOCMimetype" data-toggle="tab"><i class="icon-share"></i>
             Mimetypes</a>
     </li>
@@ -65,10 +67,10 @@
 
 <div class="tab-pane" id="APIDOCParameter">
     <button class="btn btn-small btn-danger tcb tcb-saveParameters pull-right">Save</button>
-    <h3>Parameters</h3>
+    <h3>Query Parameters</h3>
 
     <div class="parameterlist">
-        There are no parameters for this method defined.
+        There is no parameter definitions for this method.
     </div>
 
     <h3>Add new parameter</h3>
@@ -179,6 +181,52 @@
         </script>
     {/literal}
 </div>
+
+
+<div class="tab-pane" id="APIDOCFields">
+    <button class="btn btn-small btn-danger tcb tcb-saveFields pull-right">Save</button>
+    <h3>Fields</h3>
+
+    <div class="fieldlist">
+        No field definitions for this restlet available.
+    </div>
+
+    <h3>Add new field</h3>
+
+    <div class="segment-line tc-newParameter tc-newParameter-name" contenteditable="true">Name</div>
+    <button class="btn btn-small btn-primary tcb tcb-addParameter pull-right" data-parameter="new"><i
+                class="icon-plus"></i></button>
+    <div class="tc-newParameter tc-newParameter-description" contenteditable="true">Description</div>
+    <hr>
+    <div class="row">
+        <div class="col-md-2">Type</div>
+        <div class="col-md-10">
+            <select name="a" class="tc-newParameter tc-newParameter-type col-md-4">
+                <option value="string">string</option>
+                <option value="int">int</option>
+                <option value="float">float</option>
+                <option value="boolean">boolean</option>
+                <option value="timestamp">timestamp</option>
+                <option value="enc32int">Base32EncodedInt</option>
+            </select>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-2">DB field mapping</div>
+        <div class="col-md-10"><input type="text" class="tc-newParameter tc-newParameter-default_value col-md-6">
+        </div>
+    </div>
+
+    <hr>
+
+
+</div>
+<div class="tab-pane" id="APIDOCExpands">
+    EXPANDS
+</div>
+
 <div class="tab-pane" id="APIDOCMimetype">
     <button class="btn btn-small btn-danger tcb tcb-saveMimetypes pull-right">Save</button>
     <h3>Mimetypes</h3>

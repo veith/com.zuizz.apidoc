@@ -1,0 +1,126 @@
+{"title": "",
+    "request": "", "method": "", "description": "Please describe the restlet", "parameter": {
+    "identifier": {
+        "description": "Identifier field",
+        "name": "identifier",
+        "type": "1",
+        "required": 0,
+        "default_value": "",
+        "regularexpression": ""
+    },
+    "identifiers": {
+        "description": "Array with all identifiers in path",
+        "name": "identifiers",
+        "type": "1",
+        "required": 0,
+        "default_value": "",
+        "regularexpression": ""
+    },
+    "q": {
+        "description": "Suchen",
+        "name": "q",
+        "regularexpression": "",
+        "default_value": "",
+        "type": "1",
+        "required": 0
+    },
+    "limit": {
+        "description": "Anzahl der Elemente",
+        "name": "limit",
+        "type": "2",
+        "required": 0,
+        "default_value": "10",
+        "regularexpression": ""
+    },
+    "page": {
+        "description": "Seite",
+        "name": "page",
+        "type": 2,
+        "required": false,
+        "default_value": null,
+        "regularexpression": ""
+    },
+    "scope": {
+        "description": "Scope of the request.",
+        "name": "scope",
+        "regularexpression": "",
+        "default_value": "",
+        "type": "1",
+        "required": 0
+    },
+    "sort": {
+        "description": "Sort by and direction like: id,name,-age,-days",
+        "name": "sort",
+        "regularexpression": "",
+        "default_value": "",
+        "type": "1",
+        "required": 0
+    },
+    "fields": {
+        "description": "comma separated list with fields. * is default",
+        "name": "fields",
+        "regularexpression": "",
+        "default_value": "",
+        "type": "1",
+        "required": 0
+    },
+    "expand": {
+        "description": "comma separated list with sub elements. i.e. sub(*),sub2(id,name)",
+        "name": "expand",
+        "regularexpression": "",
+        "default_value": "",
+        "type": "1",
+        "required": 0
+    }
+}, "states": {
+    "200": {
+        "code": 200,
+        "message": "OK",
+        "description": "Data is in response body"
+    },
+    "204": {
+        "code": 204,
+        "description": "Request response have no content",
+        "message": "No Content"
+    },
+    "404": {
+        "code": 400,
+        "message": "Bad Request",
+        "description": "Required fieds missing"
+    },
+    "404": {
+        "code": 404,
+        "message": "Nicht vorhanden",
+        "description": "Objekt mit Identifier nicht gefunden oder nicht vorhanden"
+    },
+    "405": {
+        "code": 405,
+        "message": "Pflichtfelder fehlen",
+        "description": "Die Daten konnten nicht verarbeitet werden. Allf\u00e4llige Detail sind im response body."
+    },
+    "422": {
+        "code": 422,
+        "message": "Unprocessable Entity",
+        "description": "Type mismatch, some fields are not sent as excepted. Please check the documentation"
+    },
+    "500": {
+        "code": 500,
+        "message": "Internal Server Error",
+        "description": "Internal Server Error"
+    }
+}, "permission": [
+    {
+        "role": "User",
+        "description": "Authentifizierte Benutzer können..."
+    },
+    {
+        "role": "Administrator",
+        "description": "Rolle Administrator kann..."
+    }
+], "mimetype": {
+    "json": {
+        "name": "json",
+        "is_default": true,
+        "response": ""
+    }
+}}
