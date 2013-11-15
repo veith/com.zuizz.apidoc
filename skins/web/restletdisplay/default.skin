@@ -1,47 +1,45 @@
 <div class="{"restletdisplay"|Tc}" data-connectors="sidenav">
-            <div class="tab-pane active" id="APIDOCInfo">
-                {literal}
-                    <script class="dot" type="text/text/x-dot-template" name="restlet">
+    <div class="tab-pane active" id="APIDOCInfo">
+        {literal}
+            <script class="dot" type="text/text/x-dot-template" name="restlet">
 
 
-                        <div class="segment-line">Info</div>
-                        <div class="row">
-                            <div class="col-md-2">
-                                <small class="light">Feature</small>
-                            </div>
-                            <div class="col-md-10">{{=it.info.feature}}</div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-2">
-                                <small class="light">Restlet</small>
-                            </div>
-                            <div class="col-md-10">{{=it.info.restlet}}</div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-2">
-                                <small class="light">Path</small>
-                            </div>
-                            <div class="col-md-10">{{=it.info.restlet_path}}</div>
-                        </div>
+                <div class="segment-line">Info</div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <small class="light">Feature</small>
+                    </div>
+                    <div class="col-md-10">{{=it.info.feature}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <small class="light">Restlet</small>
+                    </div>
+                    <div class="col-md-10">{{=it.info.restlet}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <small class="light">Path</small>
+                    </div>
+                    <div class="col-md-10">{{=it.info.restlet_path}}</div>
+                </div>
 
-                    </script>
-                {/literal}
+            </script>
+        {/literal}
 
-            </div>
-<hr>
+    </div>
+    <hr>
 
     <div class="btn-group methodButtons">
         <button class="btn btn-default btn-success tcb tcb-addGet get"><i class="icon icon-plus"></i> GET</button>
         <button class="btn btn-default btn-warning tcb tcb-addPut put"><i class="icon icon-plus"></i> PUT</button>
         <button class="btn btn-default btn-info tcb tcb-addPost post"><i class="icon icon-plus"></i> POST</button>
-        <button class="btn btn-default btn-danger tcb tcb-addDelete delete"><i class="icon icon-plus"></i> DELETE</button>
+        <button class="btn btn-default btn-danger tcb tcb-addDelete delete"><i class="icon icon-plus"></i> DELETE </button>
+
         <button class="btn btn-default disabled"><i class="icon icon-plus"></i> HEAD</button>
-        <button class="btn btn-default disabled"><i class="icon icon-plus"></i> TRACE</button>
         <button class="btn btn-default disabled"><i class="icon icon-plus"></i> OPTIONS</button>
-        <button class="btn btn-default disabled"><i class="icon icon-plus"></i> CONNECT</button>
         <button class="btn btn-default disabled"><i class="icon icon-plus"></i> PATCH</button>
     </div>
-
 
 
 </div>
