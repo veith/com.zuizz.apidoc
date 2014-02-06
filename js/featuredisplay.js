@@ -29,6 +29,7 @@
             self.feature = '';
             self.api = {};
             self.api.method = new Tc.zu.rest('/api/0/com.zuizz.apidoc.features.restlets.methods/');
+
         },
 
         onFeatureSelected: function (d) {
